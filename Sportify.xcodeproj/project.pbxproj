@@ -108,12 +108,11 @@
 		8108C23C2DE8379A0031F309 /* Sportify */ = {
 			isa = PBXGroup;
 			children = (
-				8108C23D2DE8379A0031F309 /* AppDelegate.swift */,
-				8108C23F2DE8379A0031F309 /* SceneDelegate.swift */,
-				8108C2412DE8379A0031F309 /* ViewController.swift */,
-				8108C2432DE8379A0031F309 /* Main.storyboard */,
-				8108C2492DE8379E0031F309 /* Assets.xcassets */,
-				8108C24B2DE8379E0031F309 /* LaunchScreen.storyboard */,
+				BE701DC72DE87F7000FF3976 /* Utiles */,
+				BE701DBE2DE87EBB00FF3976 /* Model */,
+				BE701DBA2DE87E7300FF3976 /* Featuers */,
+				BE701DB92DE87E4300FF3976 /* Resources */,
+				BE701DB82DE87E2800FF3976 /* App */,
 				8108C24E2DE8379E0031F309 /* Info.plist */,
 				8108C2462DE8379A0031F309 /* Sportify.xcdatamodeld */,
 			);
@@ -143,8 +142,128 @@
 				5B2B9BD38F66DF7220EAF5D6 /* Pods-Sportify.debug.xcconfig */,
 				67AD004684BA0C8FE367D592 /* Pods-Sportify.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BE701DB82DE87E2800FF3976 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8108C23D2DE8379A0031F309 /* AppDelegate.swift */,
+				8108C23F2DE8379A0031F309 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BE701DB92DE87E4300FF3976 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE701DC82DE886B400FF3976 /* Animation */,
+				8108C2492DE8379E0031F309 /* Assets.xcassets */,
+				8108C24B2DE8379E0031F309 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE701DBA2DE87E7300FF3976 /* Featuers */ = {
+			isa = PBXGroup;
+			children = (
+				BE701DBD2DE87EAF00FF3976 /* Home */,
+				BE701DBC2DE87E9D00FF3976 /* Onboarding */,
+				BE701DBB2DE87E8900FF3976 /* Splash */,
+			);
+			path = Featuers;
+			sourceTree = "<group>";
+		};
+		BE701DBB2DE87E8900FF3976 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				8108C2412DE8379A0031F309 /* ViewController.swift */,
+				8108C2432DE8379A0031F309 /* Main.storyboard */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		BE701DBC2DE87E9D00FF3976 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		BE701DBD2DE87EAF00FF3976 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BE701DC62DE87F6000FF3976 /* Presenter */,
+				BE701DC52DE87F5800FF3976 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BE701DBE2DE87EBB00FF3976 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE701DC22DE87EF900FF3976 /* UserDefault */,
+				BE701DC12DE87EEB00FF3976 /* LocalDataSource */,
+				BE701DC02DE87EDD00FF3976 /* RemoteDataSource */,
+				BE701DBF2DE87ECC00FF3976 /* Entities */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE701DBF2DE87ECC00FF3976 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		BE701DC02DE87EDD00FF3976 /* RemoteDataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RemoteDataSource;
+			sourceTree = "<group>";
+		};
+		BE701DC12DE87EEB00FF3976 /* LocalDataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalDataSource;
+			sourceTree = "<group>";
+		};
+		BE701DC22DE87EF900FF3976 /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserDefault;
+			sourceTree = "<group>";
+		};
+		BE701DC52DE87F5800FF3976 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BE701DC62DE87F6000FF3976 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BE701DC72DE87F7000FF3976 /* Utiles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utiles;
+			sourceTree = "<group>";
+		};
+		BE701DC82DE886B400FF3976 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		D794FA479A3AC87DFDE65C9B /* Frameworks */ = {
