@@ -17,6 +17,7 @@
 		8108C2582DE8379F0031F309 /* SportifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108C2572DE8379F0031F309 /* SportifyTests.swift */; };
 		8108C2622DE8379F0031F309 /* SportifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108C2612DE8379F0031F309 /* SportifyUITests.swift */; };
 		8108C2642DE8379F0031F309 /* SportifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108C2632DE8379F0031F309 /* SportifyUITestsLaunchTests.swift */; };
+		81DBDED52DE88D3F00F1B6F4 /* OnBoardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDED42DE88D3F00F1B6F4 /* OnBoardingController.swift */; };
 		B19734F5C62ABE2DFC72E237 /* Pods_Sportify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65A321DF1DA89952DF919EF /* Pods_Sportify.framework */; };
 		BE701DCE2DE890AB00FF3976 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = BE701DCD2DE890AB00FF3976 /* splash.json */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,8 @@
 		8108C25D2DE8379F0031F309 /* SportifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8108C2612DE8379F0031F309 /* SportifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITests.swift; sourceTree = "<group>"; };
 		8108C2632DE8379F0031F309 /* SportifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		81DBDED32DE88D0100F1B6F4 /* OnBoardingScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = OnBoardingScreen.storyboard; path = ../../../../../../../../Testing01/Testing01Tests/OnBoardingScreen.storyboard; sourceTree = "<group>"; };
+		81DBDED42DE88D3F00F1B6F4 /* OnBoardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingController.swift; sourceTree = "<group>"; };
 		BE701DCD2DE890AB00FF3976 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash.json; path = ../../../../../../Downloads/splash.json; sourceTree = "<group>"; };
 		E65A321DF1DA89952DF919EF /* Pods_Sportify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -138,6 +141,15 @@
 			path = SportifyUITests;
 			sourceTree = "<group>";
 		};
+		81DBDED22DE88CFA00F1B6F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81DBDED32DE88D0100F1B6F4 /* OnBoardingScreen.storyboard */,
+				81DBDED42DE88D3F00F1B6F4 /* OnBoardingController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8534F5FC377DD3D6DD8D8415 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +200,7 @@
 		BE701DBC2DE87E9D00FF3976 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				81DBDED22DE88CFA00F1B6F4 /* View */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -456,6 +469,7 @@
 				8108C2422DE8379A0031F309 /* ViewController.swift in Sources */,
 				8108C2482DE8379A0031F309 /* Sportify.xcdatamodeld in Sources */,
 				8108C23E2DE8379A0031F309 /* AppDelegate.swift in Sources */,
+				81DBDED52DE88D3F00F1B6F4 /* OnBoardingController.swift in Sources */,
 				8108C2402DE8379A0031F309 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
