@@ -19,6 +19,7 @@
 		8108C2642DE8379F0031F309 /* SportifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108C2632DE8379F0031F309 /* SportifyUITestsLaunchTests.swift */; };
 		B19734F5C62ABE2DFC72E237 /* Pods_Sportify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65A321DF1DA89952DF919EF /* Pods_Sportify.framework */; };
 		BE701DCA2DE88D4600FF3976 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = BE701DC92DE88D4600FF3976 /* splash.json */; };
+		BE701DCC2DE88EA200FF3976 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE701DCB2DE88EA200FF3976 /* test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		8108C2612DE8379F0031F309 /* SportifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITests.swift; sourceTree = "<group>"; };
 		8108C2632DE8379F0031F309 /* SportifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BE701DC92DE88D4600FF3976 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash.json; path = ../../../../../../../../Volumes/Ali/splash.json; sourceTree = "<group>"; };
+		BE701DCB2DE88EA200FF3976 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		E65A321DF1DA89952DF919EF /* Pods_Sportify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				BE701DC92DE88D4600FF3976 /* splash.json */,
+				BE701DCB2DE88EA200FF3976 /* test.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				8108C2422DE8379A0031F309 /* ViewController.swift in Sources */,
 				8108C2482DE8379A0031F309 /* Sportify.xcdatamodeld in Sources */,
 				8108C23E2DE8379A0031F309 /* AppDelegate.swift in Sources */,
+				BE701DCC2DE88EA200FF3976 /* test.swift in Sources */,
 				8108C2402DE8379A0031F309 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
