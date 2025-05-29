@@ -20,9 +20,9 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
         didSet {
             pageControl.currentPage = currentPage
             if currentPage == slides.count - 1 {
-                navBtn.setTitle("Next", for: .normal)
-            } else {
                 navBtn.setTitle("Get Started", for: .normal)
+            } else {
+                navBtn.setTitle("Next", for: .normal)
             }
         }
     }
@@ -31,18 +31,28 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.register(UINib(nibName: "OnBoardingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "onBoarding")
+
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+        }
+        
         slides = [
-            OnBoardingSlides(title: "", description: "", image: UIImage(named: "")!),
-            OnBoardingSlides(title: "", description: "", image: UIImage(named: "")!),
-            OnBoardingSlides(title: "", description: "", image: UIImage(named: "")!)
+            OnBoardingSlides(title: "slide 1", description: "description1", image: UIImage(named: "man")!),
+            OnBoardingSlides(title: "slide 2", description: "description2", image: UIImage(named: "man")!),
+            OnBoardingSlides(title: "slide 3", description: "description3", image: UIImage(named: "man")!)
         ]
         
         pageControl.numberOfPages = slides.count
+        collectionView.reloadData()
     }
     
     @IBAction func navToNext(_ sender: Any) {
         if currentPage == slides.count - 1 {
-            //UserDefaults.standard.hasOnboarded = true
+            setIsFirstTime(isFirst: true)
            // let homeVC = storyboard?.instantiateViewController(identifier: "HomeVC") as! HomeViewController
            // navigationController?.setViewControllers([homeVC], animated: true)
         } else {
@@ -67,8 +77,6 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
-    
-    
     
 
     /*
