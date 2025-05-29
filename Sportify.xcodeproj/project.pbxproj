@@ -17,10 +17,14 @@
 		8108C2582DE8379F0031F309 /* SportifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108C2572DE8379F0031F309 /* SportifyTests.swift */; };
 		8108C2622DE8379F0031F309 /* SportifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108C2612DE8379F0031F309 /* SportifyUITests.swift */; };
 		8108C2642DE8379F0031F309 /* SportifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108C2632DE8379F0031F309 /* SportifyUITestsLaunchTests.swift */; };
-		81DBDED52DE88D3F00F1B6F4 /* OnBoardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDED42DE88D3F00F1B6F4 /* OnBoardingController.swift */; };
+		81DBDED72DE8948100F1B6F4 /* OnBoardingScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81DBDED62DE8948100F1B6F4 /* OnBoardingScreen.storyboard */; };
+		81DBDED92DE895F300F1B6F4 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDED82DE895F300F1B6F4 /* OnBoardingViewController.swift */; };
+		81DBDEDB2DE898A400F1B6F4 /* OnBoardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDEDA2DE898A400F1B6F4 /* OnBoardingSlides.swift */; };
+		81DBDEE02DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDEDE2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.swift */; };
+		81DBDEE12DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81DBDEDF2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.xib */; };
+		81DBDEE52DE8B09800F1B6F4 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 81DBDEE42DE8B09800F1B6F4 /* splash.json */; };
 		B19734F5C62ABE2DFC72E237 /* Pods_Sportify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65A321DF1DA89952DF919EF /* Pods_Sportify.framework */; };
 		BE701DD02DE8980A00FF3976 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE701DCF2DE8980A00FF3976 /* UserDefault.swift */; };
-		BEC0EA7D2DE8BCD40065C941 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = BEC0EA7C2DE8BCD40065C941 /* splash.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +61,12 @@
 		8108C25D2DE8379F0031F309 /* SportifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8108C2612DE8379F0031F309 /* SportifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITests.swift; sourceTree = "<group>"; };
 		8108C2632DE8379F0031F309 /* SportifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		81DBDED32DE88D0100F1B6F4 /* OnBoardingScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = OnBoardingScreen.storyboard; path = ../../../../../../../../Testing01/Testing01Tests/OnBoardingScreen.storyboard; sourceTree = "<group>"; };
-		81DBDED42DE88D3F00F1B6F4 /* OnBoardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingController.swift; sourceTree = "<group>"; };
+		81DBDED62DE8948100F1B6F4 /* OnBoardingScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoardingScreen.storyboard; sourceTree = "<group>"; };
+		81DBDED82DE895F300F1B6F4 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		81DBDEDA2DE898A400F1B6F4 /* OnBoardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingSlides.swift; path = Sportify/Featuers/Onboarding/View/OnBoardingSlides.swift; sourceTree = SOURCE_ROOT; };
+		81DBDEDE2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		81DBDEDF2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingCollectionViewCell.xib; sourceTree = "<group>"; };
+		81DBDEE42DE8B09800F1B6F4 /* splash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = splash.json; path = Sportify/Resources/Animation/splash.json; sourceTree = "<group>"; };
 		BE701DCD2DE890AB00FF3976 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash.json; path = ../../../../../../Downloads/splash.json; sourceTree = "<group>"; };
 		BE701DCF2DE8980A00FF3976 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		BEC0EA7C2DE8BCD40065C941 /* splash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = splash.json; path = Sportify/Resources/Animation/splash.json; sourceTree = "<group>"; };
@@ -94,7 +102,7 @@
 		8108C2312DE8379A0031F309 = {
 			isa = PBXGroup;
 			children = (
-				BEC0EA7C2DE8BCD40065C941 /* splash.json */,
+				81DBDEE42DE8B09800F1B6F4 /* splash.json */,
 				8108C23C2DE8379A0031F309 /* Sportify */,
 				8108C2562DE8379F0031F309 /* SportifyTests */,
 				8108C2602DE8379F0031F309 /* SportifyUITests */,
@@ -148,8 +156,10 @@
 		81DBDED22DE88CFA00F1B6F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				81DBDED32DE88D0100F1B6F4 /* OnBoardingScreen.storyboard */,
-				81DBDED42DE88D3F00F1B6F4 /* OnBoardingController.swift */,
+				81DBDED62DE8948100F1B6F4 /* OnBoardingScreen.storyboard */,
+				81DBDED82DE895F300F1B6F4 /* OnBoardingViewController.swift */,
+				81DBDEDE2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.swift */,
+				81DBDEDF2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +242,7 @@
 		BE701DBF2DE87ECC00FF3976 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				81DBDEDA2DE898A400F1B6F4 /* OnBoardingSlides.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -401,9 +412,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC0EA7D2DE8BCD40065C941 /* splash.json in Resources */,
+				81DBDEE52DE8B09800F1B6F4 /* splash.json in Resources */,
 				8108C24D2DE8379E0031F309 /* LaunchScreen.storyboard in Resources */,
+				81DBDED72DE8948100F1B6F4 /* OnBoardingScreen.storyboard in Resources */,
 				8108C24A2DE8379E0031F309 /* Assets.xcassets in Resources */,
+				81DBDEE12DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.xib in Resources */,
 				8108C2452DE8379A0031F309 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,12 +484,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81DBDEE02DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.swift in Sources */,
 				8108C2422DE8379A0031F309 /* ViewController.swift in Sources */,
 				8108C2482DE8379A0031F309 /* Sportify.xcdatamodeld in Sources */,
 				BE701DD02DE8980A00FF3976 /* UserDefault.swift in Sources */,
 				8108C23E2DE8379A0031F309 /* AppDelegate.swift in Sources */,
-				81DBDED52DE88D3F00F1B6F4 /* OnBoardingController.swift in Sources */,
 				8108C2402DE8379A0031F309 /* SceneDelegate.swift in Sources */,
+				81DBDEDB2DE898A400F1B6F4 /* OnBoardingSlides.swift in Sources */,
+				81DBDED92DE895F300F1B6F4 /* OnBoardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
