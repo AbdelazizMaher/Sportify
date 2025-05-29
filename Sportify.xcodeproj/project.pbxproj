@@ -19,6 +19,7 @@
 		8108C2642DE8379F0031F309 /* SportifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8108C2632DE8379F0031F309 /* SportifyUITestsLaunchTests.swift */; };
 		81DBDED52DE88D3F00F1B6F4 /* OnBoardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDED42DE88D3F00F1B6F4 /* OnBoardingController.swift */; };
 		B19734F5C62ABE2DFC72E237 /* Pods_Sportify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65A321DF1DA89952DF919EF /* Pods_Sportify.framework */; };
+		BE701DCE2DE890AB00FF3976 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = BE701DCD2DE890AB00FF3976 /* splash.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		8108C2632DE8379F0031F309 /* SportifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		81DBDED32DE88D0100F1B6F4 /* OnBoardingScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = OnBoardingScreen.storyboard; path = ../../../../../../../../Testing01/Testing01Tests/OnBoardingScreen.storyboard; sourceTree = "<group>"; };
 		81DBDED42DE88D3F00F1B6F4 /* OnBoardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingController.swift; sourceTree = "<group>"; };
+		BE701DCD2DE890AB00FF3976 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash.json; path = ../../../../../../Downloads/splash.json; sourceTree = "<group>"; };
 		E65A321DF1DA89952DF919EF /* Pods_Sportify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -275,6 +277,7 @@
 		BE701DC82DE886B400FF3976 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				BE701DCD2DE890AB00FF3976 /* splash.json */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 			files = (
 				8108C24D2DE8379E0031F309 /* LaunchScreen.storyboard in Resources */,
 				8108C24A2DE8379E0031F309 /* Assets.xcassets in Resources */,
+				BE701DCE2DE890AB00FF3976 /* splash.json in Resources */,
 				8108C2452DE8379A0031F309 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
