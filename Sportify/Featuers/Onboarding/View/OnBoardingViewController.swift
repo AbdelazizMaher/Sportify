@@ -38,16 +38,24 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
 
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
+            layout.minimumLineSpacing = 0
         }
+
+        collectionView.isPagingEnabled = true
         
         slides = [
-            OnBoardingSlides(title: "slide 1", description: "description1", image: UIImage(named: "man")!),
-            OnBoardingSlides(title: "slide 2", description: "description2", image: UIImage(named: "man")!),
-            OnBoardingSlides(title: "slide 3", description: "description3", image: UIImage(named: "man")!)
+            OnBoardingSlides(title: "Welcome to Sportify!", description: "Track your favorite leagues, teams, and players — all in one place. Stay in the game, anytime, anywhere.", image: UIImage(named: "slide1")!),
+            OnBoardingSlides(title: "Stay Ahead of the Action", description: "Get real-time match updates, player stats, and league standings delivered straight to your screen", image: UIImage(named: "slide1")!),
+            OnBoardingSlides(title: "Build Your Dream Lineup", description: "Discover upcoming matches, follow your star players, and never miss a moment of the action", image: UIImage(named: "slide1")!)
         ]
         
         pageControl.numberOfPages = slides.count
         collectionView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     @IBAction func navToNext(_ sender: Any) {
@@ -71,12 +79,20 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onBoarding", for: indexPath) as! OnBoardingCollectionViewCell
         
         cell.setCurrentSlide(slide: slides[indexPath.row])
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        print("Cell size: \(collectionView.frame.size.width)")
+        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    
     
 
     /*
