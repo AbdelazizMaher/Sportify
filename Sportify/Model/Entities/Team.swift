@@ -10,8 +10,8 @@ import Foundation
 
 struct Team: Decodable {
     let teamKey: Int
-    let teamName: String
-    let teamLogo: String
+    let teamName: String?
+    let teamLogo: String?
     let players: [Player]
     let coaches : [Coach]
 
@@ -36,12 +36,12 @@ struct Coach: Decodable {
 
 struct Player: Decodable {
     let playerKey: Int
-    let playerImage: String
-    let playerName, playerNumber: String
-    let playerCountry: String
+    let playerImage: String?
+    let playerName, playerNumber: String?
+    let playerCountry: String?
     let playerType: PlayerType
-    let playerAge, playerMatchPlayed, playerGoals: String
-    let playerRating: String
+    let playerAge, playerMatchPlayed, playerGoals: String?
+    let playerRating: String?
 
     enum CodingKeys: String, CodingKey {
         case playerKey = "player_key"

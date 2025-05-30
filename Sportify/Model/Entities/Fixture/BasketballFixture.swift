@@ -9,12 +9,12 @@ import Foundation
 
 struct BasketballFixture: Codable {
     let eventKey: Int
-    let eventDate, eventTime, eventHomeTeam: String
+    let eventDate, eventTime, eventHomeTeam: String?
     let homeTeamKey: Int
-    let eventAwayTeam: String
+    let eventAwayTeam: String?
     let awayTeamKey: Int
-    let eventFinalResult: String
-    let eventStatus: String
+    let eventFinalResult: String?
+    let eventStatus: String?
     let eventHomeTeamLogo, eventAwayTeamLogo: String?
 
     enum CodingKeys: String, CodingKey {

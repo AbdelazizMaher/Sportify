@@ -15,6 +15,7 @@ protocol PNetworkService{
         from: String,
         to: String,
         leagueId: String ,
+        teamId : String ,
         handler: @escaping ([T]?) -> Void
     )
 }
@@ -26,12 +27,17 @@ class NetworkServiceCM : PNetworkService{
         from: String = "",
         to: String = "",
         leagueId: String = "",
+        teamId : String = "",
         handler: @escaping ([T]?) -> Void
     ) {
         var url = "\(URL)\(sport)/?met=\(met)&APIkey=\(API_KEY)&from=\(from)&to=\(to)"
         
         if !leagueId.isEmpty {
             url += "&leagueId=\(leagueId)"
+        }
+        
+        if !teamId.isEmpty {
+            url += "&teamId=\(teamId)"
         }
         
         AF.request(url).responseDecodable(of: APIResponse<T>.self) { response in

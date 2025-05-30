@@ -10,15 +10,15 @@ import Foundation
 
 struct FootballFixture: Decodable {
     let eventKey: Int
-    let eventDate: String
-    let eventTime: String
-    let eventHomeTeam: String
+    let eventDate: String?
+    let eventTime: String?
+    let eventHomeTeam: String?
     let homeTeamKey: Int
-    let eventAwayTeam: String
+    let eventAwayTeam: String?
     let awayTeamKey: Int
-    let eventFinalResult : String
-    let eventStatus: String
-    let homeTeamLogo, awayTeamLogo: String
+    let eventFinalResult : String?
+    let eventStatus: String?
+    let homeTeamLogo, awayTeamLogo: String?
 
     enum CodingKeys: String, CodingKey {
         case eventKey = "event_key"

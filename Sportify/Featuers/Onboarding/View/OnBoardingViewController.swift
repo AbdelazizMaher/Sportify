@@ -30,18 +30,6 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let service = NetworkServiceCM()
-//        
-//        service.fetchDataFromApi(sport: "cricket", met: "Leagues" ) { (fixtures: [CrickitResult]?) in
-//            DispatchQueue.main.async {
-//                if let fixtures = fixtures {
-//                    print("Fetched \(fixtures[0].leagueName) leagues")
-//                } else {
-//                    print("Failed to fetch")
-//                }
-//            }
-//           
-//        }
         // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.dataSource = self

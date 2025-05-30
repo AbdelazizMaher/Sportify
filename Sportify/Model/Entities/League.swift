@@ -11,7 +11,7 @@ import Foundation
 
 struct League: Decodable {
     let leagueKey: Int
-    let leagueName: String
+    let leagueName: String?
     let countryKey: Int
     let countryName: String
     let leagueLogo, countryLogo: String?
