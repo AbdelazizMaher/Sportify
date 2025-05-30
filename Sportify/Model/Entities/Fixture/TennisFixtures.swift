@@ -10,13 +10,13 @@ import Foundation
 
 struct TennisFixture: Decodable {
     let eventKey: Int
-    let eventDate, eventTime, eventFirstPlayer: String
+    let eventDate, eventTime, eventFirstPlayer: String?
     let firstPlayerKey: Int
-    let eventSecondPlayer: String
+    let eventSecondPlayer: String?
     let secondPlayerKey: Int
-    let eventFinalResult: String
-    let eventGameResult: String
-    let eventStatus: String
+    let eventFinalResult: String?
+    let eventGameResult: String?
+    let eventStatus: String?
     let eventFirstPlayerLogo, eventSecondPlayerLogo: String?
 
 

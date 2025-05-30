@@ -9,13 +9,13 @@ import Foundation
 
 struct CricketFixture: Decodable {
     let eventKey: Int
-    let eventDateStart, eventDateStop, eventTime, eventHomeTeam: String
+    let eventDateStart, eventDateStop, eventTime, eventHomeTeam: String?
     let homeTeamKey: Int
-    let eventAwayTeam: String
+    let eventAwayTeam: String?
     let awayTeamKey: Int
-    let eventHomeFinalResult, eventAwayFinalResult: String
-    let eventStatus: String
-    let eventStadium: String
+    let eventHomeFinalResult, eventAwayFinalResult: String?
+    let eventStatus: String?
+    let eventStadium: String?
     let eventHomeTeamLogo, eventAwayTeamLogo: String?
 
 
