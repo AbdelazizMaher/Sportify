@@ -55,7 +55,7 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
+       // navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     @IBAction func navToNext(_ sender: Any) {
