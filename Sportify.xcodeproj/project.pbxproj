@@ -31,6 +31,8 @@
 		81DBDEE52DE8B09800F1B6F4 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 81DBDEE42DE8B09800F1B6F4 /* splash.json */; };
 		81E4EC6B2DE9BD8B00AB7D9A /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E4EC6A2DE9BD8B00AB7D9A /* League.swift */; };
 		B19734F5C62ABE2DFC72E237 /* Pods_Sportify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65A321DF1DA89952DF919EF /* Pods_Sportify.framework */; };
+		BE5F2ECC2DE9D1760026F568 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F2ECB2DE9D1760026F568 /* NetworkService.swift */; };
+		BE5F2ED02DE9DEBB0026F568 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F2ECF2DE9DEBB0026F568 /* Constant.swift */; };
 		BE701DD02DE8980A00FF3976 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE701DCF2DE8980A00FF3976 /* UserDefault.swift */; };
 /* End PBXBuildFile section */
 
@@ -278,6 +280,7 @@
 		BE701DC02DE87EDD00FF3976 /* RemoteDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				BE5F2ECB2DE9D1760026F568 /* NetworkService.swift */,
 			);
 			path = RemoteDataSource;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 		BE701DC72DE87F7000FF3976 /* Utiles */ = {
 			isa = PBXGroup;
 			children = (
+				BE5F2ECF2DE9DEBB0026F568 /* Constant.swift */,
 			);
 			path = Utiles;
 			sourceTree = "<group>";
