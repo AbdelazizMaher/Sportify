@@ -24,12 +24,12 @@ class ViewController: UIViewController {
         if isFirst {
               DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
                   let vc = storyboard.instantiateViewController(withIdentifier: "onBoarding")
-                  self.navigationController?.pushViewController(vc, animated: true)
+                  self.navigationController?.setViewControllers([vc], animated: true)
               }
           } else {
               DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
                   let vc = storyboard.instantiateViewController(withIdentifier: "onBoarding")
-                  self.navigationController?.pushViewController(vc, animated: true)
+                  self.navigationController?.setViewControllers([vc], animated: true)
               }
           }
         

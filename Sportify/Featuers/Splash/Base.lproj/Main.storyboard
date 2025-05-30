@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="2D2-HT-xYl" customClass="LottieAnimationView" customModule="Lottie">
-                                <rect key="frame" x="4" y="107" width="385" height="707"/>
+                            <view contentMode="scaleAspectFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2D2-HT-xYl" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="4" y="111" width="385" height="707"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="splash"/>

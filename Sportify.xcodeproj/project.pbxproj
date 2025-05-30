@@ -69,6 +69,7 @@
 		81DBDEE42DE8B09800F1B6F4 /* splash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = splash.json; path = Sportify/Resources/Animation/splash.json; sourceTree = "<group>"; };
 		BE701DCD2DE890AB00FF3976 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = splash.json; path = ../../../../../../Downloads/splash.json; sourceTree = "<group>"; };
 		BE701DCF2DE8980A00FF3976 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		BEC0EA7C2DE8BCD40065C941 /* splash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = splash.json; path = Sportify/Resources/Animation/splash.json; sourceTree = "<group>"; };
 		E65A321DF1DA89952DF919EF /* Pods_Sportify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
