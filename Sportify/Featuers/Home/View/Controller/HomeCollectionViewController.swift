@@ -65,6 +65,13 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "League", bundle:nil)
+        let leaguesVC = storyboard.instantiateViewController(withIdentifier: "league") as! LeagueTableViewController
+        leaguesVC.sport = presenter.item(index: indexPath.item).type.rawValue
+        navigationController?.pushViewController(leaguesVC, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width * 0.45
         return CGSize(width: width, height: width * 1.4)
