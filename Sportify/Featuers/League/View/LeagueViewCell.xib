@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22129"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeagueViewCell" customModule="Sportify" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="97" id="KGk-i7-Jjw" customClass="LeagueViewCell" customModule="Sportify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="419" height="97"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="419" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trophy" translatesAutoresizingMaskIntoConstraints="NO" id="tcm-TV-hHf">
+                        <rect key="frame" x="16" y="12" width="69" height="69"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="tcm-TV-hHf" secondAttribute="height" multiplier="1:1" id="lbS-6J-zfx"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fifa Worled Cup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l72-5f-TrT">
+                        <rect key="frame" x="101" y="11.999999999999998" width="310" height="25.333333333333329"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="palestine" translatesAutoresizingMaskIntoConstraints="NO" id="tAa-cH-Beb">
+                        <rect key="frame" x="367" y="49.333333333333336" width="36" height="24.000000000000007"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="E4K-2x-r9V"/>
+                            <constraint firstAttribute="height" constant="24" id="mRO-ol-QhX"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palstine" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KG-bo-RYE">
+                        <rect key="frame" x="101" y="49.333333333333336" width="254" height="21.666666666666664"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tcm-TV-hHf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="1zy-cp-7xS"/>
+                    <constraint firstItem="tAa-cH-Beb" firstAttribute="top" secondItem="l72-5f-TrT" secondAttribute="bottom" constant="12" id="3iX-E3-aZg"/>
+                    <constraint firstItem="tcm-TV-hHf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="3jH-d8-NA3"/>
+                    <constraint firstItem="l72-5f-TrT" firstAttribute="leading" secondItem="tcm-TV-hHf" secondAttribute="trailing" constant="16" id="7QV-sf-9PX"/>
+                    <constraint firstItem="l72-5f-TrT" firstAttribute="top" secondItem="tcm-TV-hHf" secondAttribute="top" id="BCV-hE-ZxR"/>
+                    <constraint firstAttribute="bottom" secondItem="tcm-TV-hHf" secondAttribute="bottom" constant="16" id="Tvu-76-HWr"/>
+                    <constraint firstItem="tAa-cH-Beb" firstAttribute="leading" secondItem="5KG-bo-RYE" secondAttribute="trailing" constant="12" id="b26-FG-omu"/>
+                    <constraint firstItem="5KG-bo-RYE" firstAttribute="top" secondItem="tAa-cH-Beb" secondAttribute="top" id="eKW-At-2fy"/>
+                    <constraint firstAttribute="trailing" secondItem="tAa-cH-Beb" secondAttribute="trailing" constant="16" id="gJJ-Pr-V4d"/>
+                    <constraint firstItem="tAa-cH-Beb" firstAttribute="leading" secondItem="l72-5f-TrT" secondAttribute="trailing" constant="-44" id="jdj-KV-mnT"/>
+                    <constraint firstItem="5KG-bo-RYE" firstAttribute="leading" secondItem="tcm-TV-hHf" secondAttribute="trailing" constant="16" id="qMN-7o-pen"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="205.34351145038167" y="7.394366197183099"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="palestine" width="512" height="512"/>
+        <image name="trophy" width="512" height="512"/>
+    </resources>
+</document>
