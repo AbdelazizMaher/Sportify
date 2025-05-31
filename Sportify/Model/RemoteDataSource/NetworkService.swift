@@ -30,7 +30,7 @@ class NetworkServiceCM : PNetworkService{
         teamId : String = "",
         handler: @escaping ([T]?) -> Void
     ) {
-        var url = "\(URL)\(sport)/?met=\(met)&APIkey=\(API_KEY)&from=\(from)&to=\(to)"
+        var url = "\(BASE_URL)\(sport)/?met=\(met)&APIkey=\(API_KEY)&from=\(from)&to=\(to)"
         
         if !leagueId.isEmpty {
             url += "&leagueId=\(leagueId)"
