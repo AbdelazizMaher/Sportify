@@ -10,11 +10,12 @@ import Foundation
 
 
 struct League: Decodable {
-    let leagueKey: Int
+    let leagueKey: Int?
     let leagueName: String?
-    let countryKey: Int
-    let countryName: String
+    let countryKey: Int?
+    let countryName: String?
     let leagueLogo, countryLogo: String?
+    let leagueYear : String?
 
     enum CodingKeys: String, CodingKey {
         case leagueKey = "league_key"
@@ -23,5 +24,6 @@ struct League: Decodable {
         case countryName = "country_name"
         case leagueLogo = "league_logo"
         case countryLogo = "country_logo"
+        case leagueYear = "league_year"
     }
 }
