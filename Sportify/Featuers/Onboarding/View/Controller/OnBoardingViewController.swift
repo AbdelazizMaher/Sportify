@@ -57,6 +57,7 @@ class OnBoardingViewController: UIViewController, UICollectionViewDataSource, UI
             layout.scrollDirection = .horizontal
             layout.minimumLineSpacing = 0
         }
+        
     }
     
     private func setupSlides() {
@@ -105,7 +106,11 @@ class OnBoardingViewController: UIViewController, UICollectionViewDataSource, UI
     }
         
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return collectionView.frame.size
+        let width = collectionView.frame.size.width
+        let height = collectionView.frame.size.height
+        print("Cell width: \(width)")
+        print("Cell height: \(height)")
+        return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
