@@ -119,7 +119,21 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "LeagueDetailsScreen", bundle: nil)
         let detailsVC = storyboard.instantiateViewController(withIdentifier: "details") as! DetailsCollectionViewController
-        detailsVC.presenter = LeagueDetailsPresenter(view: detailsVC, sportType: self.sport, leagueId: self.presenter.getLeagueObject(indexPath: indexPath.row).leagueKey!)
+
+        let league = self.presenter.getLeagueObject(indexPath: indexPath.row)
+
+        let leagueKey = league.leagueKey
+        let leagueName = league.leagueName ?? "Unknown League"
+        let leagueLogo = league.leagueLogo ?? ""
+
+        detailsVC.presenter = LeagueDetailsPresenter(
+            view: detailsVC,
+            sportType: self.sport,
+            leagueId: leagueKey ?? 0 ,
+            leagueName: leagueName,
+            leagueLogo: leagueLogo
+        )
+        
         navigationController?.pushViewController(detailsVC, animated: true)
     }
     /*

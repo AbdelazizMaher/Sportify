@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol FavProtocol{
     func renderToView(res : [LeagueLocal])
@@ -34,6 +35,11 @@ class FavTableController: UITableViewController, FavProtocol {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.getAllFav()
+    }
+
 
     func renderToView(res: [LeagueLocal]) {
         presenter.setList(list: res)
@@ -55,13 +61,25 @@ class FavTableController: UITableViewController, FavProtocol {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favcell", for: indexPath) as! FavCell
 
         let obj = presenter.getFavByIndexPath(indexPath: indexPath.row)
-        
+
         cell.leageuLabel.text = obj.leagueName
-        cell.leagueImg.kf.setImage(with: URL(string: obj.leagueLogo))
-        // Configure the cell...
+        if let url = URL(string: obj.leagueLogo) {
+            cell.leagueImg.kf.setImage(with: url, placeholder: UIImage(systemName: "photo"))
+        }else{
+            cell.leagueImg.image = UIImage(systemName: "photo")
+        }
+        cell.deleteAction = {
+            self.presenter.deleteFromCore(objc: obj)
+            self.presenter.getAllFav()
+            self.tableView.reloadData()
+        }
+        
+        let heartImage = presenter.checkFav(id: obj.leagueKey) ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        cell.favBtn.setImage(heartImage, for: .normal)
 
         return cell
     }
+
    
  
     

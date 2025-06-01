@@ -4,24 +4,24 @@
 //
 //  Created by Ali_Kotb on 01/06/2025.
 //
-
 import UIKit
-
 class FavCell: UITableViewCell {
 
     @IBOutlet weak var favBtn: UIButton!
     @IBOutlet weak var leageuLabel: UILabel!
     @IBOutlet weak var leagueImg: UIImageView!
+    
+    var deleteAction: (() -> Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         favBtn.imageView?.contentMode = .scaleAspectFit
-          favBtn.imageEdgeInsets = .zero
-          favBtn.contentEdgeInsets = .zero
+        favBtn.imageEdgeInsets = .zero
+        favBtn.contentEdgeInsets = .zero
 
-          if let image = UIImage(systemName: "heart.fill") {
-              favBtn.setImage(image.withConfiguration(UIImage.SymbolConfiguration(pointSize: 24)), for: .normal)
-          }
+        // Set initial heart icon style
+        favBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+
         leagueImg.clipsToBounds = true
         leagueImg.contentMode = .scaleAspectFill
     }
@@ -31,11 +31,16 @@ class FavCell: UITableViewCell {
         leagueImg.layer.cornerRadius = leagueImg.frame.width / 2
     }
 
+    // This method is called when the delete button is tapped
     @IBAction func deleteFromFav(_ sender: Any) {
-        
+        deleteAction?()
     }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 }
+
+
+
 

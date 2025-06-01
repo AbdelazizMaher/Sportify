@@ -37,8 +37,8 @@ class FavPresenter {
     func deleteFromCore(objc: LeagueLocal){
         localDataSource.deleteLeague(obj: objc)
     }
-    func checkFav(name: String)->Bool{
-        return localDataSource.checkIsFavorite(leagueName: name)
+    func checkFav(id: Int16)->Bool{
+        return localDataSource.checkIsFavorite(leagueKey: id)
     }
 }
 
