@@ -89,11 +89,11 @@ class LocalDataSource {
     }
 
     
-    func checkIsFavorite(leagueName: String) ->Bool{
+    func checkIsFavorite(leagueKey: Int16) ->Bool{
         let list = self.getAllLeague()
         
         for item in list{
-            if item.leagueName == leagueName{
+            if item.leagueKey == leagueKey{
                 return true
             }
         }

@@ -28,7 +28,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUf-Lo-sPl">
-                                <rect key="frame" x="121" y="16" width="283" height="89"/>
+                                <rect key="frame" x="137" y="16" width="283" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="283" id="pgu-bv-deP"/>
                                 </constraints>
@@ -52,7 +52,7 @@
                             <constraint firstAttribute="trailing" secondItem="c8W-FY-1n4" secondAttribute="trailing" constant="16" id="dRk-dn-tCR"/>
                             <constraint firstItem="dVV-gV-nbV" firstAttribute="top" secondItem="T72-Rf-kNz" secondAttribute="top" constant="16" id="jCr-kf-BW5"/>
                             <constraint firstAttribute="bottom" secondItem="dVV-gV-nbV" secondAttribute="bottom" constant="16" id="k3Y-Gl-Wwb"/>
-                            <constraint firstItem="EUf-Lo-sPl" firstAttribute="leading" secondItem="dVV-gV-nbV" secondAttribute="trailing" constant="16" id="nou-G0-0qS"/>
+                            <constraint firstItem="EUf-Lo-sPl" firstAttribute="leading" secondItem="dVV-gV-nbV" secondAttribute="trailing" constant="32" id="nou-G0-0qS"/>
                             <constraint firstItem="c8W-FY-1n4" firstAttribute="top" secondItem="T72-Rf-kNz" secondAttribute="top" constant="32" id="u0d-h9-bP8"/>
                             <constraint firstAttribute="bottom" secondItem="c8W-FY-1n4" secondAttribute="bottom" constant="32" id="ufd-TX-hLd"/>
                             <constraint firstItem="EUf-Lo-sPl" firstAttribute="top" secondItem="dVV-gV-nbV" secondAttribute="top" id="wc7-Xh-2ZT"/>
