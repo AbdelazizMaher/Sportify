@@ -16,31 +16,41 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+  
+    
         presenter = HomePresenter()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-    
-        navigationItem.title = "Choose Your Sport"
-        navigationController?.navigationBar.titleTextAttributes = [
-            .font: UIFont.boldSystemFont(ofSize: 28),
-            .foregroundColor: UIColor.label
-        ]
-        // Register cell classes
-        collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCell")
-        let storyboardB = UIStoryboard(name: "Favorite", bundle: nil)
+            
+            navigationItem.title = "Choose Your Sport"
+            navigationController?.navigationBar.titleTextAttributes = [
+                .font: UIFont.boldSystemFont(ofSize: 28),
+                .foregroundColor: UIColor.label
+            ]
+            
+            // Register cell classes
+            collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCell")
+            
+            // Create Favorite page
+            let storyboardB = UIStoryboard(name: "Favorite", bundle: nil)
+            let favPage = storyboardB.instantiateViewController(withIdentifier: "fav")
+            favPage.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(systemName: "heart"), tag: 2)
 
-        let favPage = storyboardB.instantiateViewController(withIdentifier: "fav")
-
-                favPage.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(systemName: "heart"), tag: 2)
-
+            // Add Favorite page to the tab bar controller
+            addFavoriteTab(favPage)
+        }
+    private func addFavoriteTab(_ favPage: UIViewController) {
         if let tabBarController = self.tabBarController {
-              var currentVCs = tabBarController.viewControllers ?? []
-              currentVCs.append(favPage)
-              tabBarController.viewControllers = currentVCs
-          }
-        // Do any additional setup after loading the view.
+            var currentVCs = tabBarController.viewControllers ?? []
+            
+            let navController = UINavigationController(rootViewController: favPage)
+            navController.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(systemName: "heart"), tag: 2)
+            
+            if !currentVCs.contains(where: { $0.tabBarItem.tag == 2 }) {
+                currentVCs.append(navController)
+                tabBarController.viewControllers = currentVCs
+            }
+        }
     }
-    
+
     /*
     // MARK: - Navigation
 

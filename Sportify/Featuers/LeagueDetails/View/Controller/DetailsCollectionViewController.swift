@@ -27,11 +27,6 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
         heartButton.tintColor = .systemRed
         navigationItem.rightBarButtonItem = heartButton
         
-        let heartButton = UIBarButtonItem(image: UIImage(systemName: "heart"),style: .plain,target: self,action: #selector(favoriteButtonTapped))
-                                          
-        heartButton.tintColor = .systemRed
-        navigationItem.rightBarButtonItem = heartButton
-        
         collectionView.register(
             UINib(nibName: "UpcomingCollectionViewCell", bundle: nil),
             forCellWithReuseIdentifier: "upcoming"
