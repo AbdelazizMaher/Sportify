@@ -24,12 +24,7 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
 
            self.myTable.delegate = self
            self.myTable.dataSource = self
-           self.navigationItem.title = "AlAhly"
-           let attributes: [NSAttributedString.Key: Any] = [
-               .font: UIFont.systemFont(ofSize: 24, weight: .bold),
-               .foregroundColor: UIColor.red
-           ]
-           navigationController?.navigationBar.titleTextAttributes = attributes
+           
 
            let nibPlayer = UINib(nibName: "PlayerCell", bundle: nil)
            myTable.register(nibPlayer, forCellReuseIdentifier: "playercell")
@@ -46,7 +41,13 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
                    headerView!.bottomAnchor.constraint(equalTo: myHeader.bottomAnchor),
                ])
            }
-
+           self.navigationItem.backButtonTitle = "Leagues details"
+           self.navigationItem.title = presenter.teamName
+           let attributes: [NSAttributedString.Key: Any] = [
+               .font: UIFont.systemFont(ofSize: 24, weight: .bold),
+               .foregroundColor: UIColor.red
+           ]
+           navigationController?.navigationBar.titleTextAttributes = attributes
            presenter.getDataFromModel()
        }
     func renderToView(res : [Team])
