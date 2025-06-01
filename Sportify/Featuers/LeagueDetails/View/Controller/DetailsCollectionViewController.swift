@@ -274,4 +274,31 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
         header.addSubview(label)
         return header
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 2 {
+            let storyboard = UIStoryboard(name: "TeamStoryBoard", bundle: nil)
+            let teamsVC = storyboard.instantiateViewController(withIdentifier: "team") as! PlayerTableController
+            teamsVC.presenter = TeamPresenter(vc: teamsVC, teamID: String(presenter.teams[indexPath.item].teamKey), teamName: presenter.teams[indexPath.item].teamName!)
+            navigationController?.pushViewController(teamsVC, animated: true)
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            UIView.animate(withDuration: 0.2) {
+                cell.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+                cell.alpha = 0.8
+            }
+        }
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            UIView.animate(withDuration: 0.2) {
+                cell.transform = .identity
+                cell.alpha = 1.0
+            }
+        }
+    }
 }

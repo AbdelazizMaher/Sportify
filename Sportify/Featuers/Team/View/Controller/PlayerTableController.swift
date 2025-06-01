@@ -47,7 +47,6 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
                ])
            }
 
-           presenter = TeamPresenter(vc: self,teamID: "74",teamName: "asd")
            presenter.getDataFromModel()
        }
     func renderToView(res : [Team])
