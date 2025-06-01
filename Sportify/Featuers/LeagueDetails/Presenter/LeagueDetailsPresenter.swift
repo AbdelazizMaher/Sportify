@@ -24,8 +24,6 @@ class LeagueDetailsPresenter {
     private(set) var latestMatches: [Any] = []
     private(set) var teams: [Team] = []
     
-    
-    
     init(view: LeagueDetailsProtocol!, sportType: String, leagueId: Int) {
         self.view = view
         self.sportType = sportType
@@ -33,29 +31,13 @@ class LeagueDetailsPresenter {
     }
     
     func getUpcomingEvents() {
-        let currentDate = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let fromDate = dateFormatter.string(from: currentDate)
-        
-        guard let futureDate = Calendar.current.date(byAdding: .day, value: 15, to: currentDate) else { return }
-        let toDate = dateFormatter.string(from: futureDate)
-        
-        
-       fetchFixtures(from: fromDate, to: toDate, isUpcoming: true)
-        
+        let dateRange = DateUtility.shared.getDateRange(for: sportType, isUpcoming: true)
+        fetchFixtures(from: dateRange.from, to: dateRange.to, isUpcoming: true)
     }
     
     func getLatestEvents() {
-        let currentDate = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let toDate = dateFormatter.string(from: currentDate)
-        
-        guard let pastDate = Calendar.current.date(byAdding: .day, value: -8, to: currentDate) else { return }
-        let fromDate = dateFormatter.string(from: pastDate)
-        
-        fetchFixtures(from: fromDate, to: toDate, isUpcoming: false)
+        let dateRange = DateUtility.shared.getDateRange(for: sportType, isUpcoming: false)
+        fetchFixtures(from: dateRange.from, to: dateRange.to, isUpcoming: false)
     }
     
     func getAllTeams() {
@@ -84,5 +66,9 @@ class LeagueDetailsPresenter {
                 }
             }
         })
+    }
+    
+    func updateFavoriteButton(isFavorite: Bool) {
+        
     }
 }
