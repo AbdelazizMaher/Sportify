@@ -24,7 +24,7 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
         self.navigationItem.title = "Leagues"
             let attributes: [NSAttributedString.Key: Any] = [
                  .font: UIFont.systemFont(ofSize: 24, weight: .bold),
-                 .foregroundColor: UIColor.brown
+                 .foregroundColor: UIColor.red
              ]
              navigationController?.navigationBar.titleTextAttributes = attributes
         let nib = UINib(nibName: "LeagueViewCell", bundle: nil)
