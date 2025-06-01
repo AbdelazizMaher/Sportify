@@ -116,7 +116,12 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
         100
     }
 
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "LeagueDetailsScreen", bundle: nil)
+        let detailsVC = storyboard.instantiateViewController(withIdentifier: "details") as! DetailsCollectionViewController
+        detailsVC.presenter = LeagueDetailsPresenter(view: detailsVC, sportType: self.sport, leagueId: self.presenter.getLeagueObject(indexPath: indexPath.row).leagueKey!)
+        navigationController?.pushViewController(detailsVC, animated: true)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
