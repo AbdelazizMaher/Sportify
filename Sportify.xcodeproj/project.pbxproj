@@ -42,7 +42,6 @@
 		81DBDED92DE895F300F1B6F4 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDED82DE895F300F1B6F4 /* OnBoardingViewController.swift */; };
 		81DBDEDB2DE898A400F1B6F4 /* OnBoardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDEDA2DE898A400F1B6F4 /* OnBoardingSlides.swift */; };
 		81DBDEE02DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDEDE2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.swift */; };
-		81DBDEE12DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81DBDEDF2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.xib */; };
 		81DBDEE52DE8B09800F1B6F4 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 81DBDEE42DE8B09800F1B6F4 /* splash.json */; };
 		81E4EC6B2DE9BD8B00AB7D9A /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E4EC6A2DE9BD8B00AB7D9A /* League.swift */; };
 		B19734F5C62ABE2DFC72E237 /* Pods_Sportify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65A321DF1DA89952DF919EF /* Pods_Sportify.framework */; };
@@ -242,6 +241,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		814712CC2DEC66FA000FB111 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				81C87E852DEB3994006851DB /* UpcomingCollectionViewCell.swift */,
+				810F53562DEB5B8E0008372D /* TeamsCollectionViewCell.swift */,
+				81C87E8F2DEB5260006851DB /* LatestCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		814712CD2DEC6724000FB111 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				81C87E902DEB5260006851DB /* LatestCollectionViewCell.xib */,
+				810F53572DEB5B8E0008372D /* TeamsCollectionViewCell.xib */,
+				81C87E862DEB3994006851DB /* UpcomingCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		81C87E7D2DEB245B006851DB /* LeagueDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,14 +273,9 @@
 		81C87E7E2DEB246F006851DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				814712CD2DEC6724000FB111 /* Cell */,
 				81C87E802DEB24AB006851DB /* Controller */,
 				81C87E812DEB24DC006851DB /* LeagueDetailsScreen.storyboard */,
-				81C87E852DEB3994006851DB /* UpcomingCollectionViewCell.swift */,
-				81C87E862DEB3994006851DB /* UpcomingCollectionViewCell.xib */,
-				81C87E8F2DEB5260006851DB /* LatestCollectionViewCell.swift */,
-				81C87E902DEB5260006851DB /* LatestCollectionViewCell.xib */,
-				810F53562DEB5B8E0008372D /* TeamsCollectionViewCell.swift */,
-				810F53572DEB5B8E0008372D /* TeamsCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,6 +291,7 @@
 		81C87E802DEB24AB006851DB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				814712CC2DEC66FA000FB111 /* Cell */,
 				81C87E832DEB2578006851DB /* DetailsCollectionViewController.swift */,
 			);
 			path = Controller;
@@ -433,11 +448,8 @@
 		BE701DBA2DE87E7300FF3976 /* Featuers */ = {
 			isa = PBXGroup;
 			children = (
-
 				81C87E7D2DEB245B006851DB /* LeagueDetails */,
-
 				BE65A0622DEB67AD00CFC602 /* Team */,
-
 				BE02A61A2DEA39590077CC9E /* League */,
 				BE701DBD2DE87EAF00FF3976 /* Home */,
 				BE701DBC2DE87E9D00FF3976 /* Onboarding */,
@@ -679,8 +691,7 @@
 				81306D462DEA6A7200218697 /* HomeScreen.storyboard in Resources */,
 				8108C24A2DE8379E0031F309 /* Assets.xcassets in Resources */,
 				81C87E882DEB3994006851DB /* UpcomingCollectionViewCell.xib in Resources */,
-				BE65A0742DEB884500CFC602 /* TeamStoryBoard.storyboard in
-				81DBDEE12DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.xib in Resources */,
+				BE65A0742DEB884500CFC602 /* TeamStoryBoard.storyboard in Resources */,
 				BE65A06F2DEB83AD00CFC602 /* PlayerCell.xib in Resources */,
 				BE65A0672DEB67E900CFC602 /* TeamCell.xib in Resources */,
 				BE02A6242DEA41F30077CC9E /* League.storyboard in Resources */,
@@ -777,9 +788,7 @@
 				BE02A6152DEA20D00077CC9E /* NetworkService.swift in Sources */,
 				81306D4C2DEA6EE800218697 /* HomeCollectionViewController.swift in Sources */,
 				BE02A62F2DEA60100077CC9E /* LeageuPresenter.swift in Sources */,
-
 				BE65A0772DEB887D00CFC602 /* PlayerTableController.swift in Sources */,
-				81306D302DE9D7E600218697 /* FootballFixture.swift in Sources */,
 				81D6AB0E2DEAA89A0029DE4B /* CustomTabBarController.swift in Sources */,
 				81D6AB162DEACD410029DE4B /* APIMethods.swift in Sources */,
 				BE65A07B2DEB9F1300CFC602 /* TeamPresenter.swift in Sources */,

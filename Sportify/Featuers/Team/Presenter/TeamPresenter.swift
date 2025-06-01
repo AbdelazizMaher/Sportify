@@ -41,8 +41,8 @@ class TeamPresenter{
             DispatchQueue.main.async {
                 self.teamList = res ?? []
                 if let firstTeam = self.teamList.first {
-                    self.playerList = firstTeam.players
-                    self.coachList = firstTeam.coaches
+                    self.playerList = firstTeam.players ?? []
+                    self.coachList = firstTeam.coaches ?? []
                     self.teamLogo = firstTeam.teamLogo ?? ""
                 }
                 self.vc.renderToView(res: self.teamList)
