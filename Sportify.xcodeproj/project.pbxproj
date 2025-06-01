@@ -668,11 +668,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				81C87E822DEB24DC006851DB /* LeagueDetailsScreen.storyboard in Resources */,
-=======
 				BE65A06A2DEB818200CFC602 /* ahly.gif in Resources */,
->>>>>>> main
 				81DBDEE52DE8B09800F1B6F4 /* splash.json in Resources */,
 				BE02A62A2DEA430B0077CC9E /* LeagueViewCell.xib in Resources */,
 				8108C24D2DE8379E0031F309 /* LaunchScreen.storyboard in Resources */,
@@ -681,11 +678,8 @@
 				81306D4A2DEA6AE000218697 /* HomeCollectionViewCell.xib in Resources */,
 				81306D462DEA6A7200218697 /* HomeScreen.storyboard in Resources */,
 				8108C24A2DE8379E0031F309 /* Assets.xcassets in Resources */,
-<<<<<<< HEAD
 				81C87E882DEB3994006851DB /* UpcomingCollectionViewCell.xib in Resources */,
-=======
-				BE65A0742DEB884500CFC602 /* TeamStoryBoard.storyboard in Resources */,
->>>>>>> main
+				BE65A0742DEB884500CFC602 /* TeamStoryBoard.storyboard in
 				81DBDEE12DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.xib in Resources */,
 				BE65A06F2DEB83AD00CFC602 /* PlayerCell.xib in Resources */,
 				BE65A0672DEB67E900CFC602 /* TeamCell.xib in Resources */,
@@ -783,11 +777,9 @@
 				BE02A6152DEA20D00077CC9E /* NetworkService.swift in Sources */,
 				81306D4C2DEA6EE800218697 /* HomeCollectionViewController.swift in Sources */,
 				BE02A62F2DEA60100077CC9E /* LeageuPresenter.swift in Sources */,
-<<<<<<< HEAD
-=======
+
 				BE65A0772DEB887D00CFC602 /* PlayerTableController.swift in Sources */,
 				81306D302DE9D7E600218697 /* FootballFixture.swift in Sources */,
->>>>>>> main
 				81D6AB0E2DEAA89A0029DE4B /* CustomTabBarController.swift in Sources */,
 				81D6AB162DEACD410029DE4B /* APIMethods.swift in Sources */,
 				BE65A07B2DEB9F1300CFC602 /* TeamPresenter.swift in Sources */,
