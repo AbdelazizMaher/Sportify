@@ -27,7 +27,17 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         ]
         // Register cell classes
         collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCell")
+        let storyboardB = UIStoryboard(name: "Favorite", bundle: nil)
 
+        let favPage = storyboardB.instantiateViewController(withIdentifier: "fav")
+
+                favPage.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(systemName: "heart"), tag: 2)
+
+        if let tabBarController = self.tabBarController {
+              var currentVCs = tabBarController.viewControllers ?? []
+              currentVCs.append(favPage)
+              tabBarController.viewControllers = currentVCs
+          }
         // Do any additional setup after loading the view.
     }
     
