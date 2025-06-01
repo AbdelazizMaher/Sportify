@@ -40,15 +40,85 @@ class LeagueDetailsPresenter {
         fetchFixtures(from: dateRange.from, to: dateRange.to, isUpcoming: false)
     }
     
+//    func getAllTeams() {
+//        service.fetchDataFromApi(sport: sportType, met: APIMethods.teams.rawValue, leagueId: String(leagueId), handler: {[weak self] (matches: [Team]?) in
+//            if let matches = matches {
+//                DispatchQueue.main.async {
+//                    self?.teams = matches
+//                    self?.view?.reloadTeamsSection()
+//                }
+//            }
+//        })
+//    }
+    
     func getAllTeams() {
-        service.fetchDataFromApi(sport: sportType, met: APIMethods.teams.rawValue, leagueId: String(leagueId), handler: {[weak self] (matches: [Team]?) in
-            if let matches = matches {
+        if sportType.lowercased() == "tennis" {
+            extractPlayersFromFixtures()
+        } else {
+            fetchRegularTeams()
+        }
+    }
+
+    private func fetchRegularTeams() {
+        service.fetchDataFromApi(sport: sportType,met: APIMethods.teams.rawValue,leagueId: String(leagueId),handler: { [weak self] (teams: [Team]?) in
                 DispatchQueue.main.async {
-                    self?.teams = matches
+                    self?.teams = teams ?? []
+                    self?.view?.reloadTeamsSection()
+                }
+            }
+        )
+    }
+
+    private func extractPlayersFromFixtures() {
+        let dateRange = DateUtility.shared.getDateRange(for: SportsType.tennis.rawValue, isUpcoming: false)
+        service.fetchDataFromApi(sport: sportType, met: APIMethods.fixtures.rawValue, from: dateRange.from, to: dateRange.to, leagueId: String(leagueId), handler: { [weak self] (matches: [Fixture]?) in
+            if let matches = matches {
+                var players = [Team]()
+                
+                for fixture in matches {
+                    if let tennisFixture = fixture as? Fixture {
+                        if let player1 = tennisFixture.homeParticipant,
+                           let playerKey = tennisFixture.homeParticipantKey {
+                            players.append(Team(
+                                teamKey: playerKey,
+                                teamName: player1,
+                                teamLogo: tennisFixture.homeParticipantLogo,
+                                players: [],
+                                coaches: []
+                            ))
+                        }
+                        
+                        if let player2 = tennisFixture.awayParticipant,
+                           let playerKey = tennisFixture.awayParticipantKey {
+                            players.append(Team(
+                                teamKey: playerKey,
+                                teamName: player2,
+                                teamLogo: tennisFixture.awayParticipantLogo,
+                                players: [],
+                                coaches: []
+                            ))
+                        }
+                    }
+                }
+                
+                var uniquePlayers = [Team]()
+                var seenKeys = Set<Int>()
+                
+                for player in players {
+                    if !seenKeys.contains(player.teamKey) {
+                        uniquePlayers.append(player)
+                        seenKeys.insert(player.teamKey)
+                    }
+                }
+                DispatchQueue.main.async {
+                    self?.teams = uniquePlayers
                     self?.view?.reloadTeamsSection()
                 }
             }
         })
+
+        
+        
     }
     
     
