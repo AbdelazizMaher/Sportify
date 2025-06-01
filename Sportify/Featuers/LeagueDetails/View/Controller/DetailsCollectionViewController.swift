@@ -21,6 +21,11 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let heartButton = UIBarButtonItem(image: UIImage(systemName: "heart"),style: .plain,target: self,action: #selector(favoriteButtonTapped))
+                                          
+        heartButton.tintColor = .systemRed
+        navigationItem.rightBarButtonItem = heartButton
+        
         collectionView.register(
             UINib(nibName: "UpcomingCollectionViewCell", bundle: nil),
             forCellWithReuseIdentifier: "upcoming"
@@ -54,6 +59,24 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
         presenter.getUpcomingEvents()
         presenter.getLatestEvents()
         presenter.getAllTeams()
+    }
+
+    @objc private func favoriteButtonTapped() {
+
+    }
+
+    func updateFavoriteButton(isFavorite: Bool) {
+      navigationItem.rightBarButtonItem?.image = UIImage(
+          systemName: isFavorite ? "heart.fill" : "heart"
+      )
+      
+      UIView.animate(withDuration: 0.2, animations: {
+          self.navigationItem.rightBarButtonItem?.customView?.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+      }, completion: { _ in
+          UIView.animate(withDuration: 0.2) {
+              self.navigationItem.rightBarButtonItem?.customView?.transform = .identity
+          }
+      })
     }
     
     func reloadUpcomingSection() {
@@ -234,8 +257,8 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
                 cell.team2Score.text = components[1].trimmingCharacters(in: .whitespaces)
             }
         } else if let homeResult = fixture.homeFinalResult, let awayResult = fixture.awayFinalResult {
-            cell.team1Score.text = homeResult
-            cell.team2Score.text = awayResult
+            cell.team1Score.text = homeResult.contains("(f/o)") ? "(f/o)" : homeResult
+            cell.team2Score.text = awayResult.contains("(f/o)") ? "(f/o)" : awayResult
         }
         
         let team1Logo = URL(string: fixture.homeParticipantLogo ?? "")
