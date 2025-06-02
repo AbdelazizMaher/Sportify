@@ -17,9 +17,15 @@ protocol LeagueDetailsProtocol {
 class DetailsCollectionViewController: UICollectionViewController, LeagueDetailsProtocol {
 
     var presenter: LeagueDetailsPresenter!
-    
+    var favPresenter = FavPresenter()
+    var imgName : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+         imgName = favPresenter.checkFav(id: Int16(presenter.leagueId)) ? "heart.fill" : "heart"
+        let heartButton = UIBarButtonItem(image: UIImage(systemName: imgName),style: .plain,target: self,action: #selector(favoriteButtonTapped))
+                                          
+        heartButton.tintColor = .systemRed
+        navigationItem.rightBarButtonItem = heartButton
         
         let heartButton = UIBarButtonItem(image: UIImage(systemName: "heart"),style: .plain,target: self,action: #selector(favoriteButtonTapped))
                                           
@@ -63,7 +69,31 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
 
     @objc private func favoriteButtonTapped() {
 
+        let leagueKey = Int16(presenter.leagueId)
+        
+        if favPresenter.checkFav(id: leagueKey) {
+            let league = LeagueLocal(
+                leagueKey: leagueKey,
+                leagueName: presenter.leagueName,
+                leagueLogo: presenter.leagueLogo ?? "",
+                sport: presenter.sportType,
+                isFavorite: false
+            )
+            favPresenter.deleteFromCore(objc: league)
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")
+        } else {
+            let league = LeagueLocal(
+                leagueKey: leagueKey,
+                leagueName: presenter.leagueName,
+                leagueLogo: presenter.leagueLogo ?? "",
+                sport: presenter.sportType,
+                isFavorite: true
+            )
+            favPresenter.addToCore(objc: league)
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart.fill")
+        }
     }
+
 
     func updateFavoriteButton(isFavorite: Bool) {
       navigationItem.rightBarButtonItem?.image = UIImage(

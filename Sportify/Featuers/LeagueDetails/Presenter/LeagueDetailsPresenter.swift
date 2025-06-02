@@ -17,17 +17,23 @@ class LeagueDetailsPresenter {
     let service = NetworkServiceCM()
     var view : LeagueDetailsProtocol!
     
-    private let sportType: String
-    private let leagueId: Int
+    let sportType: String
+    let leagueId: Int
+    let leagueName : String
+    let leagueLogo : String?
     
     private(set) var upcomingMatches: [Any] = []
     private(set) var latestMatches: [Any] = []
     private(set) var teams: [Team] = []
     
-    init(view: LeagueDetailsProtocol!, sportType: String, leagueId: Int) {
+
+    init(view: LeagueDetailsProtocol!, sportType: String, leagueId: Int, leagueName: String, leagueLogo: String) {
         self.view = view
         self.sportType = sportType
         self.leagueId = leagueId
+        self.leagueName = leagueName
+        self.leagueLogo = leagueLogo
+        
     }
     
     func getUpcomingEvents() {
