@@ -34,11 +34,91 @@ final class SportifyTests: XCTestCase {
         }
     }
     
+    //test football//////
     func testGetFootballData(){
             let exp = expectation(description: "waiting for Api")
             service.fetchDataFromApi(sport: "football", met: "Leagues") { (result: [League]?) in
 
                 XCTAssert(result?.count == 943)
+                exp.fulfill()
+
+            }
+            waitForExpectations(timeout: 5)
+
+        }
+    
+    func testGetFootballTeams(){
+            let exp = expectation(description: "waiting for Api")
+            service.fetchDataFromApi(sport: "football", met: "Teams",teamId: "96") { (result: [Team]?) in
+
+                XCTAssert(result?[0].teamName == "Juventus")
+                exp.fulfill()
+
+            }
+            waitForExpectations(timeout: 5)
+
+        }
+ 
+    
+    //test basketBall
+    func testGetBasketballData(){
+            let exp = expectation(description: "waiting for Api")
+            service.fetchDataFromApi(sport: "basketball", met: "Leagues") { (result: [League]?) in
+
+                XCTAssert(result?.count == 531)
+                exp.fulfill()
+
+            }
+            waitForExpectations(timeout: 5)
+
+        }
+    
+    
+    func testGetBasketballTeams(){
+            let exp = expectation(description: "waiting for Api")
+            service.fetchDataFromApi(sport: "basketball",  met: "Teams",teamId: "96") { (result: [Team]?) in
+
+                XCTAssert(result?[0].teamName == "Ludwigsburg")
+                exp.fulfill()
+
+            }
+            waitForExpectations(timeout: 5)
+
+        }
+    
+    //test tennis
+    func testGetTennisData(){
+            let exp = expectation(description: "waiting for Api")
+            service.fetchDataFromApi(sport: "tennis", met: "Leagues") { (result: [League]?) in
+
+                XCTAssert(result?.count == 8905)
+                exp.fulfill()
+
+            }
+            waitForExpectations(timeout: 10)
+
+        }
+    
+    
+    
+    //test Cricket
+    func testGetCricket(){
+            let exp = expectation(description: "waiting for Api")
+            service.fetchDataFromApi(sport: "cricket", met: "Leagues") { (result: [League]?) in
+
+                XCTAssert(result?.count == 702)
+                exp.fulfill()
+
+            }
+            waitForExpectations(timeout: 5)
+
+        }
+    
+    func testGetCricketTeams(){
+            let exp = expectation(description: "waiting for Api")
+            service.fetchDataFromApi(sport: "cricket", met: "Teams",teamId: "138") { (result: [Team]?) in
+
+                XCTAssert(result?[0].teamName == "Barbados Cricket Association President's XI" &&  result?[0].teamKey == 138)
                 exp.fulfill()
 
             }
