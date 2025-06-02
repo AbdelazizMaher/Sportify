@@ -16,10 +16,10 @@ protocol HomePresenterProtocol {
 
 class HomePresenter : HomePresenterProtocol {
     private(set) var sports: [SportItem] = [
-        SportItem(name: "Football", imageName: "slide1", type: SportsType.football),
-        SportItem(name: "Basketball", imageName: "slide1", type: SportsType.basketball),
-        SportItem(name: "Tennis", imageName: "slide1", type: SportsType.tennis),
-        SportItem(name: "Cricket", imageName: "slide1", type: SportsType.cricket)
+        SportItem(name: "Football", imageName: "foot1", type: SportsType.football),
+        SportItem(name: "Basketball", imageName: "basket1", type: SportsType.basketball),
+        SportItem(name: "Tennis", imageName: "tennis1", type: SportsType.tennis),
+        SportItem(name: "Cricket", imageName: "cricket2", type: SportsType.cricket)
     ]
     
     func numberOfItems() -> Int {
