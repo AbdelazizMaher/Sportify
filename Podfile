@@ -6,6 +6,11 @@ target 'Sportify' do
   pod 'Alamofire', '~> 5.6.0'
   pod 'Kingfisher', '~> 8.0'
   pod 'lottie-ios', '~> 4.2.0'
+  pod 'ReachabilitySwift'
+
+  target 'SportifyTests' do
+    inherit! :search_paths
+  end
  
   post_install do |installer|
     installer.pods_project.targets.each do |target|
