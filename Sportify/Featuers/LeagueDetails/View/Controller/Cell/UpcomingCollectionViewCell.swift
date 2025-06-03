@@ -21,11 +21,6 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        team1Logo.layer.cornerRadius = team1Logo.frame.size.width / 2
-        team1Logo.clipsToBounds = true
-        team2Logo.layer.cornerRadius = team2Logo.frame.size.width / 2
-        team2Logo.clipsToBounds = true
-        
         contentView.layer.cornerRadius = 12
         contentView.layer.borderWidth = 1
         contentView.layer.borderColor = UIColor.lightGray.cgColor

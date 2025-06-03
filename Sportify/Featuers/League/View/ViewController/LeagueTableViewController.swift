@@ -28,6 +28,7 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
         let nib = UINib(nibName: "LeagueViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         presenter = LeaguePresenter(sport:sport,vc : self)
+        presenter.getDataFromModel()
     }
     
     

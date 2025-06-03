@@ -23,22 +23,15 @@ class LatestCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        team1Logo.layer.cornerRadius = team1Logo.frame.size.width / 2
-        team1Logo.clipsToBounds = true
-        team2Logo.layer.cornerRadius = team2Logo.frame.size.width / 2
-        team2Logo.clipsToBounds = true
-        
         contentView.layer.cornerRadius = 12
         contentView.layer.borderWidth = 1
         contentView.layer.borderColor = UIColor.lightGray.cgColor
-
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.15
-        layer.shadowOffset = CGSize(width: 0, height: 4)
-        layer.shadowRadius = 6
-        layer.masksToBounds = false
-
-        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 12).cgPath
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = contentView.bounds
+        gradientLayer.colors = [UIColor.systemGray6.cgColor, UIColor.white.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        contentView.layer.insertSublayer(gradientLayer, at: 0)
     }
-
 }

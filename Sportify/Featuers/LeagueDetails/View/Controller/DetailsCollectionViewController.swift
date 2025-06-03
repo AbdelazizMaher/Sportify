@@ -126,7 +126,7 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
 
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.9),
-            heightDimension: .fractionalHeight(0.27)
+            heightDimension: .absolute(250)
         )
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
@@ -158,7 +158,7 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
 
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(0.27)
+            heightDimension: .absolute(250)
         )
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
@@ -189,7 +189,7 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
 
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.3),
-            heightDimension: .fractionalHeight(0.2)
+            heightDimension: .absolute(150)
         )
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
@@ -353,5 +353,15 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
                 cell.alpha = 1.0
             }
         }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        coordinator.animate(alongsideTransition: { _ in
+            self.collectionView.collectionViewLayout.invalidateLayout()
+            // If using estimated sizes, you might need to reload data too
+            self.collectionView.reloadData()
+        }, completion: nil)
     }
 }
