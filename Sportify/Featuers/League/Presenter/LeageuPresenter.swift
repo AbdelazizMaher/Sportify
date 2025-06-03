@@ -29,7 +29,6 @@ class LeaguePresenter{
             DispatchQueue.main.async {
                 self.vc.renderToView(res: res ?? [])
             }
-            
         })
     }
     

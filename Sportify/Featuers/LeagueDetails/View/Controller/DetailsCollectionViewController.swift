@@ -324,11 +324,16 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         if indexPath.section == 2 {
-            let storyboard = UIStoryboard(name: "TeamStoryBoard", bundle: nil)
-            let teamsVC = storyboard.instantiateViewController(withIdentifier: "team") as! PlayerTableController
-            teamsVC.presenter = TeamPresenter(vc: teamsVC, teamID: String(presenter.teams[indexPath.item].teamKey), teamName: presenter.teams[indexPath.item].teamName!)
-            navigationController?.pushViewController(teamsVC, animated: true)
+            if NetworkManager.isInternetAvailable() {
+                let storyboard = UIStoryboard(name: "TeamStoryBoard", bundle: nil)
+                let teamsVC = storyboard.instantiateViewController(withIdentifier: "team") as! PlayerTableController
+                teamsVC.presenter = TeamPresenter(vc: teamsVC, teamID: String(presenter.teams[indexPath.item].teamKey), teamName: presenter.teams[indexPath.item].teamName!)
+                navigationController?.pushViewController(teamsVC, animated: true)
+            } else {
+                showAlert(title: "No Internet Connection", message: "Please check your connection and try again.", okTitle: "Ok")
+            }
         }
     }
     
