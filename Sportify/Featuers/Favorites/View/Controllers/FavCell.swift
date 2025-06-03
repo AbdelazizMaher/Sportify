@@ -23,12 +23,13 @@ class FavCell: UITableViewCell {
         favBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
 
         leagueImg.clipsToBounds = true
-        leagueImg.contentMode = .scaleAspectFill
+        leagueImg.contentMode = .scaleAspectFit
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        leagueImg.layer.cornerRadius = leagueImg.frame.width / 2
+        leagueImg.layer.cornerRadius = leagueImg.frame.size.width / 1.88
+        //leagueImg.frame.width / 2
     }
 
     // This method is called when the delete button is tapped

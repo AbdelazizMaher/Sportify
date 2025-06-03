@@ -6,14 +6,14 @@
 //
 
 import UIKit
-
 class CustomTabBarController: UITabBarController {
     
     private let floatingTabBarView = UIView()
     private let tabBarHeight: CGFloat = 60
     private let bottomPadding: CGFloat = 20
     private let sidePadding: CGFloat = 20
-    private let cornerRadius: CGFloat = 24   
+    private let cornerRadius: CGFloat = 24
+    private var isCustomTabBarHidden = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +44,15 @@ class CustomTabBarController: UITabBarController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        if isCustomTabBarHidden {
+            tabBar.isHidden = true
+            floatingTabBarView.isHidden = true
+            return
+        } else {
+            tabBar.isHidden = false
+            floatingTabBarView.isHidden = false
+        }
+        
         let safeAreaBottom = view.safeAreaInsets.bottom
         let totalHeight = tabBarHeight + bottomPadding + safeAreaBottom
         
@@ -72,5 +81,22 @@ class CustomTabBarController: UITabBarController {
             $0.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
             $0.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 4)
         }
+    }
+    
+    func setTabBarHidden(_ hidden: Bool, animated: Bool = true) {
+        isCustomTabBarHidden = hidden
+        
+        if animated {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.floatingTabBarView.alpha = hidden ? 0 : 1
+            }) { _ in
+                self.tabBar.isHidden = hidden
+            }
+        } else {
+            self.floatingTabBarView.alpha = hidden ? 0 : 1
+            self.tabBar.isHidden = hidden
+        }
+        
+        self.view.setNeedsLayout()
     }
 }

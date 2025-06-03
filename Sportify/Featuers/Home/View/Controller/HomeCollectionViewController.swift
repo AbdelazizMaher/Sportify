@@ -23,20 +23,26 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
             navigationItem.title = "Choose Your Sport"
             navigationController?.navigationBar.titleTextAttributes = [
                 .font: UIFont.boldSystemFont(ofSize: 28),
-                .foregroundColor: UIColor.label
+                .foregroundColor: UIColor.red
             ]
             
-            // Register cell classes
             collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCell")
             
-            // Create Favorite page
             let storyboardB = UIStoryboard(name: "Favorite", bundle: nil)
             let favPage = storyboardB.instantiateViewController(withIdentifier: "fav")
             favPage.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(systemName: "heart"), tag: 2)
 
-            // Add Favorite page to the tab bar controller
             addFavoriteTab(favPage)
         }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let customTabBar = self.tabBarController as? CustomTabBarController {
+            customTabBar.setTabBarHidden(false)
+        }
+    }
+
+    
     private func addFavoriteTab(_ favPage: UIViewController) {
         if let tabBarController = self.tabBarController {
             var currentVCs = tabBarController.viewControllers ?? []

@@ -20,7 +20,7 @@ class FavTableController: UITableViewController, FavProtocol {
         let headerLabel = UILabel()
           headerLabel.text = "Favorites"
           headerLabel.font = UIFont.boldSystemFont(ofSize: 28)
-          headerLabel.textColor = .label
+          headerLabel.textColor = .red
           headerLabel.textAlignment = .center
           headerLabel.backgroundColor = .systemBackground
           headerLabel.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60)
@@ -29,14 +29,13 @@ class FavTableController: UITableViewController, FavProtocol {
         tableView.register(nibPlayer, forCellReuseIdentifier: "favcell")
         presenter.vc = self
         presenter.getAllFav()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if let customTabBar = self.tabBarController as? CustomTabBarController {
+            customTabBar.setTabBarHidden(false)
+        }
         presenter.getAllFav()
     }
 
@@ -64,14 +63,18 @@ class FavTableController: UITableViewController, FavProtocol {
 
         cell.leageuLabel.text = obj.leagueName
         if let url = URL(string: obj.leagueLogo) {
-            cell.leagueImg.kf.setImage(with: url, placeholder: UIImage(systemName: "photo"))
+            cell.leagueImg.kf.setImage(with: url, placeholder: UIImage(named: "trophy"))
         }else{
-            cell.leagueImg.image = UIImage(systemName: "photo")
+            cell.leagueImg.image = UIImage(named: "trophy")
         }
         cell.deleteAction = {
-            self.presenter.deleteFromCore(objc: obj)
-            self.presenter.getAllFav()
-            self.tableView.reloadData()
+            self.showAlert(title: DELETE_ALERT_TITLE, message:  DELETE_ALERT_MSG ,cancelTitle: "No",deleteTitle: "Yes",onDelete: {
+                
+                self.presenter.deleteFromCore(objc: obj)
+                self.presenter.getAllFav()
+                self.tableView.reloadData()
+            })
+           
         }
         
         let heartImage = presenter.checkFav(id: obj.leagueKey) ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")

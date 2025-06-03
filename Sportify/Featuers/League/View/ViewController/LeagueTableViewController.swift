@@ -28,9 +28,19 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
         let nib = UINib(nibName: "LeagueViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         presenter = LeaguePresenter(sport:sport,vc : self)
+        presenter.getDataFromModel()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let customTabBar = self.tabBarController as? CustomTabBarController {
+            customTabBar.setTabBarHidden(true)
+        }
+    }
+
+
+
     func renderToView(res : [League]){
         self.presenter.setLiset(list: res)
         DispatchQueue.main.async {
