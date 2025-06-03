@@ -96,24 +96,29 @@ class FavTableController: UITableViewController, FavProtocol {
             print("No navigation controller found!")
         }
 
-        let storyboard = UIStoryboard(name: "LeagueDetailsScreen", bundle: nil)
-        let detailsVC = storyboard.instantiateViewController(withIdentifier: "details") as! DetailsCollectionViewController
+        if NetworkManager.isInternetAvailable() {
+            let storyboard = UIStoryboard(name: "LeagueDetailsScreen", bundle: nil)
+            let detailsVC = storyboard.instantiateViewController(withIdentifier: "details") as! DetailsCollectionViewController
 
-        let league = self.presenter.getFavByIndexPath(indexPath: indexPath.row)
+            let league = self.presenter.getFavByIndexPath(indexPath: indexPath.row)
 
-        let leagueKey = league.leagueKey
-        let leagueName = league.leagueName
-        let leagueLogo = league.leagueLogo
+            let leagueKey = league.leagueKey
+            let leagueName = league.leagueName
+            let leagueLogo = league.leagueLogo
 
-        detailsVC.presenter = LeagueDetailsPresenter(
-            view: detailsVC,
-            sportType: league.sport,
-            leagueId: Int(leagueKey),
-            leagueName: leagueName,
-            leagueLogo: leagueLogo
-        )
+            detailsVC.presenter = LeagueDetailsPresenter(
+                view: detailsVC,
+                sportType: league.sport,
+                leagueId: Int(leagueKey),
+                leagueName: leagueName,
+                leagueLogo: leagueLogo
+            )
 
-        navigationController?.pushViewController(detailsVC, animated: true)
+            navigationController?.pushViewController(detailsVC, animated: true)
+        } else {
+            showAlert(title: "No Internet Connection", message: "Please check your connection and try again.", okTitle: "Ok")
+        }
+        
     }
 
 

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Reachability
 private let reuseIdentifier = "Cell"
 
 class HomeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -86,10 +86,15 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "League", bundle:nil)
-        let leaguesVC = storyboard.instantiateViewController(withIdentifier: "league") as! LeagueTableViewController
-        leaguesVC.sport = presenter.item(index: indexPath.item).type.rawValue
-        navigationController?.pushViewController(leaguesVC, animated: true)
+        if NetworkManager.isInternetAvailable() {
+            let storyboard = UIStoryboard(name: "League", bundle:nil)
+            let leaguesVC = storyboard.instantiateViewController(withIdentifier: "league") as! LeagueTableViewController
+            leaguesVC.sport = presenter.item(index: indexPath.item).type.rawValue
+            navigationController?.pushViewController(leaguesVC, animated: true)
+        }else {
+            showAlert(title: "No Internet Connection", message: "Please check your connection and try again.", okTitle: "Ok")
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -108,4 +113,7 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 16
     }
+    
+    
+    
 }
