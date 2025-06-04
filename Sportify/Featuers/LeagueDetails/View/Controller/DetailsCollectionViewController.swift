@@ -341,7 +341,8 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
                 teamsVC.presenter = TeamPresenter(vc: teamsVC, teamID: String(presenter.teams[indexPath.item].teamKey), teamName: presenter.teams[indexPath.item].teamName!)
                 navigationController?.pushViewController(teamsVC, animated: true)
             } else {
-                showAlert(title: "No Internet Connection", message: "Please check your connection and try again.", okTitle: "Ok")
+                showAlert(title: INTERNET_ALERT_TITLE, message: INTERNET_ALERT_MSG, okTitle: DELETE_ALERT_OK)
+
             }
         }
     }
