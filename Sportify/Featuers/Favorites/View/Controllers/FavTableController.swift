@@ -93,12 +93,6 @@ class FavTableController: UITableViewController, FavProtocol {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Cell selected!")
 
-        if let navigationController = self.navigationController {
-            print("Navigation controller is present.")
-        } else {
-            print("No navigation controller found!")
-        }
-
         if NetworkManager.isInternetAvailable() {
             let storyboard = UIStoryboard(name: "LeagueDetailsScreen", bundle: nil)
             let detailsVC = storyboard.instantiateViewController(withIdentifier: "details") as! DetailsCollectionViewController
