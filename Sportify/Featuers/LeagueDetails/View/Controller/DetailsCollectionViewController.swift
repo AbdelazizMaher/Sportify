@@ -61,6 +61,14 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
         presenter.getLatestEvents()
         presenter.getAllTeams()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let customTabBar = self.tabBarController as? CustomTabBarController {
+            customTabBar.setTabBarHidden(true)
+        }
+    }
 
     @objc private func favoriteButtonTapped() {
 
@@ -74,8 +82,9 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
                 sport: presenter.sportType,
                 isFavorite: false
             )
-            favPresenter.deleteFromCore(objc: league)
-            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")
+            self.showAlert(title: DELETE_ALERT_TITLE, message:  DELETE_ALERT_MSG ,cancelTitle: "No",deleteTitle: "Yes",onDelete: {
+                self.favPresenter.deleteFromCore(objc: league)
+                self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")})
         } else {
             let league = LeagueLocal(
                 leagueKey: leagueKey,

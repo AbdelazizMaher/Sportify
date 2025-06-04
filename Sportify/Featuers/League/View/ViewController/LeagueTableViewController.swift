@@ -31,7 +31,16 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
         presenter.getDataFromModel()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let customTabBar = self.tabBarController as? CustomTabBarController {
+            customTabBar.setTabBarHidden(true)
+        }
+    }
+
+
+
     func renderToView(res : [League]){
         self.presenter.setLiset(list: res)
         DispatchQueue.main.async {
