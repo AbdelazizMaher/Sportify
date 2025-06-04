@@ -79,7 +79,7 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
                
                cell.playerNum.text = coach.coachAge
                cell.playerName.text = coach.coachName
-               cell.playerType.text = "Coach"
+               cell.playerType.text = "    \(NSLocalizedString("coach", comment: "hamda"))"
             cell.playerImg.image = UIImage(named: "player")
 
            } else {
@@ -91,7 +91,7 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
                }
                cell.playerNum.text = player.playerNumber
                cell.playerName.text = player.playerName
-               cell.playerType.text = player.playerType.rawValue
+               cell.playerType.text = "    \(getTeamMemberType(member:player.playerType)) "
            }
 
         return cell

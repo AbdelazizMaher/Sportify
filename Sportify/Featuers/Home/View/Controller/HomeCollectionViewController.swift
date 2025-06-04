@@ -20,7 +20,7 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     
         presenter = HomePresenter()
             
-            navigationItem.title = "Choose Your Sport"
+            navigationItem.title = NSLocalizedString("home_title", comment: "hamda")
             navigationController?.navigationBar.titleTextAttributes = [
                 .font: UIFont.boldSystemFont(ofSize: 28),
                 .foregroundColor: UIColor.red
@@ -30,8 +30,7 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
             
             let storyboardB = UIStoryboard(name: "Favorite", bundle: nil)
             let favPage = storyboardB.instantiateViewController(withIdentifier: "fav")
-            favPage.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(systemName: "heart"), tag: 2)
-
+            favPage.tabBarItem = UITabBarItem(title: NSLocalizedString("fav_title", comment: "hamda"), image: UIImage(systemName: "heart"), tag: 2)
             addFavoriteTab(favPage)
         }
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +47,7 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
             var currentVCs = tabBarController.viewControllers ?? []
             
             let navController = UINavigationController(rootViewController: favPage)
-            navController.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(systemName: "heart"), tag: 2)
+            navController.tabBarItem = UITabBarItem(title: NSLocalizedString("fav_title", comment: "hamda"), image: UIImage(systemName: "heart"), tag: 2)
             
             if !currentVCs.contains(where: { $0.tabBarItem.tag == 2 }) {
                 currentVCs.append(navController)

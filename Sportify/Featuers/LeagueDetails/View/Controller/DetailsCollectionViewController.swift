@@ -82,7 +82,7 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
                 sport: presenter.sportType,
                 isFavorite: false
             )
-            self.showAlert(title: DELETE_ALERT_TITLE, message:  DELETE_ALERT_MSG ,cancelTitle: "No",deleteTitle: "Yes",onDelete: {
+            self.showAlert(title: DELETE_ALERT_TITLE, message:  DELETE_ALERT_MSG ,cancelTitle: DELETE_ALERT_CANCEL,deleteTitle: DELETE_ALERT_OK,onDelete: {
                 self.favPresenter.deleteFromCore(objc: league)
                 self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")})
         } else {
@@ -322,9 +322,9 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
         label.textColor = .label
 
         switch indexPath.section {
-        case 0: label.text = "Upcoming"
-        case 1: label.text = "Latest"
-        case 2: label.text = "Teams"
+        case 0: label.text = NSLocalizedString("upcoming_title", comment: "hamda")
+        case 1: label.text = NSLocalizedString("latest_title", comment: "hamda")
+        case 2: label.text = NSLocalizedString("team_title", comment: "hamda")
         default: label.text = ""
         }
 
