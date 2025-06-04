@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  Sportify
+
+  Created by Ali_Kotb on 04/06/2025.
+  
+*/
+
+"home_title" = "اختر رياضتك";
+"league_title" = "الدوريات";
+"upcoming_title" = "القادمة";
+"latest_title" = "الأحدث";
+"team_title" = "الفرق";
+"fav_title" = "المفضلة";
+
+"football_home" = "كرة القدم";
+"basket_home" = "كرة السلة";
+"tennis_home" = "التنس";
+"cricket_home" = "الكريكت";
+"delete_alert_title" = "إزالة من المفضلة";
+"delete_alert_msg" = "هل أنت متأكد أنك تريد إزالة هذا العنصر من المفضلة؟";
+"delete_alert_ok" = "نعم";
+"delete_alert_cancel" = "لا";
+
+"goolkeper" = "حارس مرمى";
+"defender" = "مدافع";
+"foreard" = "مهاجم";
+"midfielders" = "خط الوسط";
+"coach" = "المدرب";

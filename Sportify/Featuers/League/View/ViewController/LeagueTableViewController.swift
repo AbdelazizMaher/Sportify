@@ -19,7 +19,7 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
     private var bannerView: UIView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Leagues"
+        self.navigationItem.title = NSLocalizedString("league_title", comment: "hamda")
         let attributes: [NSAttributedString.Key: Any] = [
              .font: UIFont.systemFont(ofSize: 24, weight: .bold),
              .foregroundColor: UIColor.red

@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  Sportify
+
+  Created by Ali_Kotb on 04/06/2025.
+  
+*/
+
+"home_title" = "Choose Your Sport";
+"league_title" = "Leagues";
+"upcoming_title" = "Upcoming";
+"latest_title" = "Latest";
+"team_title" = "Teams";
+"fav_title" = "Favorites";
+"football_home" = "Football";
+"basket_home" = "Basketball";
+"tennis_home" = "Tennis";
+"cricket_home" = "Cricket";
+"delete_alert_title" = "Remove from Favorites";
+"delete_alert_msg" = "Are you sure you want to remove this item from your favorites?";
+"delete_alert_ok" = "Yes";
+"delete_alert_cancel" = "No";
+
+"goolkeper" = "Goalkeepers";
+"defender" = "Defenders";
+"foreard" = "Forwards";
+"midfielders" = "Midfielders";
+"coach" = "Coach";
