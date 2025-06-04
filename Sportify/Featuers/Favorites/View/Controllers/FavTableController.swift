@@ -18,7 +18,7 @@ class FavTableController: UITableViewController, FavProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         let headerLabel = UILabel()
-          headerLabel.text = "Favorites"
+          headerLabel.text = NSLocalizedString("fav_title", comment: "hamda")
           headerLabel.font = UIFont.boldSystemFont(ofSize: 28)
           headerLabel.textColor = .red
           headerLabel.textAlignment = .center
@@ -68,7 +68,7 @@ class FavTableController: UITableViewController, FavProtocol {
             cell.leagueImg.image = UIImage(named: "trophy")
         }
         cell.deleteAction = {
-            self.showAlert(title: DELETE_ALERT_TITLE, message:  DELETE_ALERT_MSG ,cancelTitle: "No",deleteTitle: "Yes",onDelete: {
+            self.showAlert(title: DELETE_ALERT_TITLE, message:  DELETE_ALERT_MSG ,cancelTitle: DELETE_ALERT_CANCEL,deleteTitle: DELETE_ALERT_OK,onDelete: {
                 
                 self.presenter.deleteFromCore(objc: obj)
                 self.presenter.getAllFav()
