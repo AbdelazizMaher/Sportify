@@ -13,3 +13,6 @@ let DELETE_ALERT_TITLE = NSLocalizedString("delete_alert_title", comment: "hamda
 let DELETE_ALERT_MSG = NSLocalizedString("delete_alert_msg", comment: "hamda")
 let DELETE_ALERT_OK = NSLocalizedString("delete_alert_ok", comment: "hamda")
 let DELETE_ALERT_CANCEL = NSLocalizedString("delete_alert_cancel", comment: "hamda")
+
+let INTERNET_ALERT_TITLE = NSLocalizedString("internet_alert_title", comment: "hamda")
+let INTERNET_ALERT_MSG = NSLocalizedString("internet_alert_msg", comment: "hamda")
