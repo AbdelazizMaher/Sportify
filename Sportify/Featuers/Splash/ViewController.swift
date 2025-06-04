@@ -23,13 +23,16 @@ class ViewController: UIViewController {
         animation.play()
         if isFirst {
               DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-                  let storyboard = UIStoryboard(name: "OnBoardingScreen", bundle: nil)
-                  let vc = storyboard.instantiateViewController(withIdentifier: "onBoarding")
-                  self.navigationController?.setViewControllers([vc], animated: true)
+                  let onboardingVC = OnBoardingViewController()
+                  self.navigationController?.setViewControllers([onboardingVC], animated: true)
+
               }
           } else {
               DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-                  self.navigateToHome()
+                  //self.navigateToHome()
+                  let onboardingVC = OnBoardingViewController()
+                  self.navigationController?.setViewControllers([onboardingVC], animated: true)
+
               }
           }
         

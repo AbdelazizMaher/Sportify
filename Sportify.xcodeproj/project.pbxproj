@@ -51,10 +51,10 @@
 		81D6AB142DEACB440029DE4B /* SportsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6AB132DEACB440029DE4B /* SportsEnum.swift */; };
 		81D6AB162DEACD410029DE4B /* APIMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6AB152DEACD410029DE4B /* APIMethods.swift */; };
 		81DAA1242DF0970500453C36 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6BAC012DEF84DE004A52A4 /* Gif.swift */; };
+		81DAA1262DF09BB400453C36 /* OnBoardingSlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAA1252DF09BB400453C36 /* OnBoardingSlidesViewController.swift */; };
+		81DAA1282DF09C2000453C36 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAA1272DF09C2000453C36 /* OnBoardingViewController.swift */; };
 		81DBDED72DE8948100F1B6F4 /* OnBoardingScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81DBDED62DE8948100F1B6F4 /* OnBoardingScreen.storyboard */; };
-		81DBDED92DE895F300F1B6F4 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDED82DE895F300F1B6F4 /* OnBoardingViewController.swift */; };
 		81DBDEDB2DE898A400F1B6F4 /* OnBoardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDEDA2DE898A400F1B6F4 /* OnBoardingSlides.swift */; };
-		81DBDEE02DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDEDE2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.swift */; };
 		81DBDEE52DE8B09800F1B6F4 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 81DBDEE42DE8B09800F1B6F4 /* splash.json */; };
 		81E4EC6B2DE9BD8B00AB7D9A /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E4EC6A2DE9BD8B00AB7D9A /* League.swift */; };
 		81E99E962DECBA4100C9D9E0 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E99E952DECBA4100C9D9E0 /* DateUtility.swift */; };
@@ -153,11 +153,10 @@
 		81D6AB0D2DEAA89A0029DE4B /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTabBarController.swift; path = Sportify/Featuers/Home/View/Controller/CustomTabBarController.swift; sourceTree = SOURCE_ROOT; };
 		81D6AB132DEACB440029DE4B /* SportsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsEnum.swift; sourceTree = "<group>"; };
 		81D6AB152DEACD410029DE4B /* APIMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMethods.swift; sourceTree = "<group>"; };
+		81DAA1252DF09BB400453C36 /* OnBoardingSlidesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingSlidesViewController.swift; sourceTree = "<group>"; };
+		81DAA1272DF09C2000453C36 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		81DBDED62DE8948100F1B6F4 /* OnBoardingScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoardingScreen.storyboard; sourceTree = "<group>"; };
-		81DBDED82DE895F300F1B6F4 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		81DBDEDA2DE898A400F1B6F4 /* OnBoardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingSlides.swift; path = Sportify/Featuers/Onboarding/Model/OnBoardingSlides.swift; sourceTree = SOURCE_ROOT; };
-		81DBDEDE2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
-		81DBDEDF2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		81DBDEE42DE8B09800F1B6F4 /* splash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = splash.json; path = Sportify/Resources/Animation/splash.json; sourceTree = "<group>"; };
 		81E4EC6A2DE9BD8B00AB7D9A /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = League.swift; path = Sportify/Model/Entities/League.swift; sourceTree = SOURCE_ROOT; };
 		81E99E952DECBA4100C9D9E0 /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
@@ -385,8 +384,8 @@
 		81D6AB102DEACAE60029DE4B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				81DBDEDE2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.swift */,
-				81DBDED82DE895F300F1B6F4 /* OnBoardingViewController.swift */,
+				81DAA1252DF09BB400453C36 /* OnBoardingSlidesViewController.swift */,
+				81DAA1272DF09C2000453C36 /* OnBoardingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -413,7 +412,6 @@
 			children = (
 				81D6AB102DEACAE60029DE4B /* Controller */,
 				81DBDED62DE8948100F1B6F4 /* OnBoardingScreen.storyboard */,
-				81DBDEDF2DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -939,7 +937,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE02A6172DEA21010077CC9E /* Constant.swift in Sources */,
-				81DBDEE02DE8A0D600F1B6F4 /* OnBoardingCollectionViewCell.swift in Sources */,
 				81566FD32DEF220B0008F652 /* UIViewController+Alert.swift in Sources */,
 				BE7D1F9F2DECC78C00D88A0F /* LeageuLocal.swift in Sources */,
 				81306D492DEA6AE000218697 /* HomeCollectionViewCell.swift in Sources */,
@@ -962,11 +959,13 @@
 				810F53582DEB5B8E0008372D /* TeamsCollectionViewCell.swift in Sources */,
 				8108C2402DE8379A0031F309 /* SceneDelegate.swift in Sources */,
 				81E4EC6B2DE9BD8B00AB7D9A /* League.swift in Sources */,
+				81DAA1282DF09C2000453C36 /* OnBoardingViewController.swift in Sources */,
 				81306D4F2DEA72F200218697 /* SportItem .swift in Sources */,
 				BE65A06D2DEB83AD00CFC602 /* PlayerCell.swift in Sources */,
 				BE02A6152DEA20D00077CC9E /* NetworkService.swift in Sources */,
 				BE6BAC022DEF84DF004A52A4 /* Gif.swift in Sources */,
 				81306D4C2DEA6EE800218697 /* HomeCollectionViewController.swift in Sources */,
+				81DAA1262DF09BB400453C36 /* OnBoardingSlidesViewController.swift in Sources */,
 				BE02A62F2DEA60100077CC9E /* LeageuPresenter.swift in Sources */,
 				BE65A0772DEB887D00CFC602 /* PlayerTableController.swift in Sources */,
 				81D6AB0E2DEAA89A0029DE4B /* CustomTabBarController.swift in Sources */,
@@ -980,7 +979,6 @@
 				81306D442DEA6A4400218697 /* HomePresenter.swift in Sources */,
 				81DBDEDB2DE898A400F1B6F4 /* OnBoardingSlides.swift in Sources */,
 				BE12ABAE2DECA67500451E6F /* FavCell.swift in Sources */,
-				81DBDED92DE895F300F1B6F4 /* OnBoardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

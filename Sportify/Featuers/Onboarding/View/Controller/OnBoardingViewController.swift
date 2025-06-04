@@ -1,87 +1,89 @@
 //
-//  OnBoardingViewController.swift
+//  OnboardinggggViewController.swift
 //  Sportify
 //
-//  Created by Abdelaziz on 29/05/2025.
+//  Created by Abdelaziz on 04/06/2025.
 //
 
 import UIKit
 
-class OnBoardingViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class OnBoardingViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+
+    private var pageVC: UIPageViewController!
+    private var pages = [OnBoardingSlidesViewController]()
+    private let pageControl = UIPageControl()
+    private let skipButton = UIButton()
+        
+    private var currentIndex = 0
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var navBtn: UIButton!
-    @IBOutlet weak var pageControl: UIPageControl!
-        
-    private var slides: [OnBoardingSlides] = []
-    private var currentPage = 0 {
-        didSet {
-            pageControl.currentPage = currentPage
-            updateNavButtonTitle()
-            collectionView.reloadData()
-        }
-    }
-    private var isLastPage: Bool {
-        return currentPage == slides.count - 1
-    }
-        
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureCollectionView()
-        setupSlides()
-        pageControl.numberOfPages = slides.count
-    }
+        view.backgroundColor = .black
         
-    @IBAction func navToNext(_ sender: Any) {
-        if isLastPage {
-            setIsFirstTime(isFirst: true)
-            navigateToHome()
-        } else {
-            currentPage += 1
-            let indexPath = IndexPath(item: currentPage, section: 0)
-            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        }
-    }
-        
-    private func configureCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.isPagingEnabled = true
-        
-        collectionView.register(
-            UINib(nibName: "OnBoardingCollectionViewCell", bundle: nil),
-            forCellWithReuseIdentifier: "onBoarding"
-        )
-        
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-            layout.minimumLineSpacing = 0
-        }
-        
+        setupPages()
+        setupPageViewController()
+        setupControls()
     }
     
-    private func setupSlides() {
-        slides = [
-            OnBoardingSlides(
-                title: "Welcome to Sportify!",
-                description: "Track your favorite leagues, teams, and players — all in one place. Stay in the game, anytime, anywhere.",
-                image: UIImage(named: "slide1")!
+    private func setupPages() {
+        pages = [
+            OnBoardingSlidesViewController(
+                imageName: "footSlide",
+                labelText: NSLocalizedString("slide1_txt", comment: "First slide text"),
+                labelPosition: .bottom
             ),
-            OnBoardingSlides(
-                title: "Stay Ahead of the Action",
-                description: "Get real-time match updates, player stats, and league standings delivered straight to your screen.",
-                image: UIImage(named: "slide1")!
+            OnBoardingSlidesViewController(
+                imageName: "basketSlide2",
+                labelText: NSLocalizedString("slide2_txt", comment: "Second slide text"),
+                labelPosition: .top
             ),
-            OnBoardingSlides(
-                title: "Build Your Dream Lineup",
-                description: "Discover upcoming matches, follow your star players, and never miss a moment of the action.",
-                image: UIImage(named: "slide1")!
+            OnBoardingSlidesViewController(
+                imageName: "tennisSlide",
+                labelText: NSLocalizedString("slide3_txt", comment: "Third slide text"),
+                labelPosition: .bottom
+            ),
+            OnBoardingSlidesViewController(
+                imageName: "stadiumSlide",
+                labelText: NSLocalizedString("slide4_txt", comment: "Fourth slide text"),
+                labelPosition: .bottom
             )
         ]
     }
     
-    private func updateNavButtonTitle() {
-        navBtn.setTitle(isLastPage ? "Get Started" : "Next", for: .normal)
+    private func setupPageViewController() {
+        pageVC = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        pageVC.dataSource = self
+        pageVC.delegate = self
+        pageVC.setViewControllers([pages[0]], direction: .forward, animated: true)
+        addChild(pageVC)
+        view.addSubview(pageVC.view)
+        pageVC.didMove(toParent: self)
+    }
+    
+    private func setupControls() {
+        pageControl.numberOfPages = pages.count
+        pageControl.currentPage = 0
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(pageControl)
+        
+        skipButton.setTitle("Skip", for: .normal)
+        skipButton.setTitleColor(.white, for: .normal)
+        skipButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        skipButton.addTarget(self, action: #selector(skipTapped), for: .touchUpInside)
+        skipButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(skipButton)
+        
+        NSLayoutConstraint.activate([
+            pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            skipButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+    }
+    
+    @objc private func skipTapped() {
+        navigateToHome()
     }
     
     private func navigateToHome() {
@@ -94,30 +96,26 @@ class OnBoardingViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
         
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return slides.count
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let index = pages.firstIndex(of: viewController as! OnBoardingSlidesViewController), index > 0 else { return nil }
+        return pages[index - 1]
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onBoarding", for: indexPath) as! OnBoardingCollectionViewCell
-        
-        cell.setCurrentSlide(slide: slides[indexPath.item])
-        return cell
-    }
-        
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.size.width
-        let height = collectionView.frame.size.height
-        print("Cell width: \(width)")
-        print("Cell height: \(height)")
-        return CGSize(width: width, height: height)
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let index = pages.firstIndex(of: viewController as! OnBoardingSlidesViewController), index < pages.count - 1 else { return nil }
+        return pages[index + 1]
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .zero
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool,
+                            previousViewControllers: [UIViewController],
+                            transitionCompleted completed: Bool) {
+        if completed, let visibleVC = pageViewController.viewControllers?.first as? OnBoardingSlidesViewController,
+           let index = pages.firstIndex(of: visibleVC) {
+            currentIndex = index
+            pageControl.currentPage = currentIndex
+            
+            skipButton.setTitle(currentIndex == pages.count - 1 ? "Done" : "Skip", for: .normal)
+        }
     }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        currentPage = Int(scrollView.contentOffset.x / scrollView.frame.width)
-    }
+
 }
