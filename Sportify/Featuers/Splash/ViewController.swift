@@ -29,9 +29,9 @@ class ViewController: UIViewController {
               }
           } else {
               DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-                  //self.navigateToHome()
-                  let onboardingVC = OnBoardingViewController()
-                  self.navigationController?.setViewControllers([onboardingVC], animated: true)
+                  self.navigateToHome()
+                  //let onboardingVC = OnBoardingViewController()
+                  //self.navigationController?.setViewControllers([onboardingVC], animated: true)
 
               }
           }

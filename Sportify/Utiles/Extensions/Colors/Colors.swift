@@ -22,30 +22,37 @@ extension UIColor {
     }
 }
 
-func applyGradientBackground(to view: UIView, cornerRadius: CGFloat = 12) {
-    let isDark = UITraitCollection.current.userInterfaceStyle == .dark
+enum GradientStyle {
+    case defaultCell
+    case SeconderyCell
+    
+    var colors: [CGColor] {
+        let isDark = UITraitCollection.current.userInterfaceStyle == .dark
+        
+        switch self {
+        case .defaultCell:
+            return isDark ?
+                [UIColor(hex: "#2C3E50").cgColor, UIColor(hex: "#4CA1AF").cgColor] :
+                [UIColor(hex: "#FFDEE9").cgColor, UIColor(hex: "#B5FFFC").cgColor]
+            
+        case .SeconderyCell:
+            return isDark ?
+                [UIColor(hex: "#232526").cgColor, UIColor(hex: "#414345").cgColor] :
+                [UIColor(hex: "#ECE9E6").cgColor, UIColor(hex: "#FFFFFF").cgColor]  
+        }
+    }
+}
 
+func applyGradientBackground(to view: UIView, cornerRadius: CGFloat = 12, style: GradientStyle) {
     view.layer.sublayers?.removeAll(where: { $0 is CAGradientLayer })
-
+    
     let gradientLayer = CAGradientLayer()
     gradientLayer.frame = view.bounds
     gradientLayer.cornerRadius = cornerRadius
-
-    if isDark {
-        gradientLayer.colors = [
-            UIColor(hex: "#2C3E50").cgColor,
-            UIColor(hex: "#4CA1AF").cgColor
-        ]
-    } else {
-        gradientLayer.colors = [
-            UIColor(hex: "#FFDEE9").cgColor,
-            UIColor(hex: "#B5FFFC").cgColor
-        ]
-    }
-
+    gradientLayer.colors = style.colors
     gradientLayer.startPoint = CGPoint(x: 0, y: 0)
     gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-
+    
     view.layer.insertSublayer(gradientLayer, at: 0)
 }
 

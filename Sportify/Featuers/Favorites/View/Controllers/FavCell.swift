@@ -33,7 +33,7 @@ class FavCell: UITableViewCell {
         super.layoutSubviews()
         leagueImg.layer.cornerRadius = leagueImg.frame.size.width / 1.88
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 16))
-        applyGradientBackground(to: backCell, cornerRadius: 12)
+        applyGradientBackground(to: backCell, cornerRadius: 12, style: .defaultCell)
     }
     
     @IBAction func deleteFromFav(_ sender: Any) {

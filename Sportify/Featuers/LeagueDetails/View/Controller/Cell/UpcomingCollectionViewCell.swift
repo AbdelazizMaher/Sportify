@@ -23,7 +23,13 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         // Initialization code
         contentView.layer.cornerRadius = 12
         contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.lightGray.cgColor
+        contentView.layer.borderColor = UIColor.red.cgColor
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        applyGradientBackground(to: contentView, cornerRadius: 12, style: .SeconderyCell)
     }
 
 }

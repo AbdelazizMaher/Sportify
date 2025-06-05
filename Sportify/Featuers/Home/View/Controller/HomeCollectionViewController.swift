@@ -20,7 +20,7 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
             
         navigationItem.title = NSLocalizedString("home_title", comment: "hamda")
         navigationController?.navigationBar.titleTextAttributes = [
-            .font: UIFont.boldSystemFont(ofSize: 28),
+            .font: UIFont(name: "American Typewriter Bold", size: 28),
             .foregroundColor: UIColor.red
         ]
         

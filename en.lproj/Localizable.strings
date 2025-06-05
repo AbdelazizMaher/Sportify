@@ -32,13 +32,12 @@
 "slide3_txt" = "Follow Your Team";
 "slide4_txt" = "Let's Get Started";
 
-<<<<<<< HEAD
+
 "Done" = "Done";
 "Skip" = "Skip";
-=======
+
 "internet_alert_title" = "No Internet Connection";
 "internet_alert_msg" = "Please check your connection and try again.";
 
 
 
->>>>>>> main

@@ -23,15 +23,17 @@ class LatestCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
         contentView.layer.cornerRadius = 12
         contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.lightGray.cgColor
+        contentView.layer.borderColor = UIColor.red.cgColor
         
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = contentView.bounds
-        gradientLayer.colors = [UIColor.systemGray6.cgColor, UIColor.white.cgColor]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-        contentView.layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        applyGradientBackground(to: contentView, cornerRadius: 12, style: .defaultCell)
+    }
+
 }

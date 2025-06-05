@@ -271,10 +271,10 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
         
         
         let team1Logo = URL(string: fixture.homeParticipantLogo ?? "")
-        cell.team1Logo.kf.setImage(with: team1Logo, placeholder: UIImage(named: "man"))
+        cell.team1Logo.kf.setImage(with: team1Logo, placeholder: UIImage(named: "placeholder")?.resized(to: CGSize(width: 80, height: 80)))
         
         let team2Logo = URL(string: fixture.awayParticipantLogo ?? "")
-        cell.team2Logo.kf.setImage(with: team2Logo, placeholder: UIImage(named: "man"))
+        cell.team2Logo.kf.setImage(with: team2Logo, placeholder: UIImage(named: "placeholder")?.resized(to: CGSize(width: 80, height: 80)))
     }
     
     private func configureLatestCell(_ cell: LatestCollectionViewCell, at index: Int) {
@@ -296,17 +296,17 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
         }
         
         let team1Logo = URL(string: fixture.homeParticipantLogo ?? "")
-        cell.team1Logo.kf.setImage(with: team1Logo, placeholder: UIImage(named: "man"))
+        cell.team1Logo.kf.setImage(with: team1Logo, placeholder: UIImage(named: "placeholder")?.resized(to: CGSize(width: 80, height: 80)))
         
         let team2Logo = URL(string: fixture.awayParticipantLogo ?? "")
-        cell.team2Logo.kf.setImage(with: team2Logo, placeholder: UIImage(named: "man"))
+        cell.team2Logo.kf.setImage(with: team2Logo, placeholder: UIImage(named: "placeholder")?.resized(to: CGSize(width: 80, height: 80)))
     }
     
     private func configureTeamCell(_ cell: TeamsCollectionViewCell, at index: Int) {
         let team = presenter.teams[index]
         cell.teamTitle.text = team.teamName
         let teamLogo = URL(string: team.teamLogo  ?? "")
-        cell.teamImg.kf.setImage(with: teamLogo, placeholder: UIImage(named: "man"))
+        cell.teamImg.kf.setImage(with: teamLogo, placeholder: UIImage(named: "placeholder")?.resized(to: CGSize(width: 80, height: 80)))
     }
     
     override func collectionView(_ collectionView: UICollectionView,viewForSupplementaryElementOfKind kind: String,at indexPath: IndexPath) -> UICollectionReusableView {
