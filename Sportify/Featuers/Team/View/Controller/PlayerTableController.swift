@@ -18,46 +18,43 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
     var presenter : TeamPresenter!
 
     var headerView: TeamCell?
-           override func viewDidLoad() {
-           super.viewDidLoad()
+    override func viewDidLoad() {
+       super.viewDidLoad()
 
-           self.myTable.delegate = self
-           self.myTable.dataSource = self
-           
+       self.myTable.delegate = self
+       self.myTable.dataSource = self
+       
 
-           let nibPlayer = UINib(nibName: "PlayerCell", bundle: nil)
-           myTable.register(nibPlayer, forCellReuseIdentifier: "playercell")
-           let screenHeight = UIScreen.main.bounds.height
+       let nibPlayer = UINib(nibName: "PlayerCell", bundle: nil)
+       myTable.register(nibPlayer, forCellReuseIdentifier: "playercell")
+       let screenHeight = UIScreen.main.bounds.height
 
-           if let loadedHeaderView = Bundle.main.loadNibNamed("TeamCell", owner: self, options: nil)?.first as? TeamCell {
-               headerView = loadedHeaderView
-               myHeader.addSubview(headerView!)
+       if let loadedHeaderView = Bundle.main.loadNibNamed("TeamCell", owner: self, options: nil)?.first as? TeamCell {
+           headerView = loadedHeaderView
+           myHeader.addSubview(headerView!)
 
-               headerView!.translatesAutoresizingMaskIntoConstraints = false
-               NSLayoutConstraint.activate([
-                   headerView!.topAnchor.constraint(equalTo: myHeader.topAnchor),
-                   headerView!.leadingAnchor.constraint(equalTo: myHeader.leadingAnchor),
-                   headerView!.trailingAnchor.constraint(equalTo: myHeader.trailingAnchor),
-                   headerView!.bottomAnchor.constraint(equalTo: myHeader.bottomAnchor),
-                   myHeader.heightAnchor.constraint(equalToConstant: screenHeight / 3)
+           headerView!.translatesAutoresizingMaskIntoConstraints = false
+           NSLayoutConstraint.activate([
+               headerView!.topAnchor.constraint(equalTo: myHeader.topAnchor),
+               headerView!.leadingAnchor.constraint(equalTo: myHeader.leadingAnchor),
+               headerView!.trailingAnchor.constraint(equalTo: myHeader.trailingAnchor),
+               headerView!.bottomAnchor.constraint(equalTo: myHeader.bottomAnchor),
+               myHeader.heightAnchor.constraint(equalToConstant: screenHeight / 3)
 
-               ])
-           }
-           self.navigationItem.backButtonTitle = "Leagues details"
-           self.navigationItem.title = presenter.teamName
-           let attributes: [NSAttributedString.Key: Any] = [
-               .font: UIFont.systemFont(ofSize: 24, weight: .bold),
-               .foregroundColor: UIColor.red
-           ]
-           navigationController?.navigationBar.titleTextAttributes = attributes
-           presenter.getDataFromModel()
+           ])
        }
-    
+       self.navigationItem.backButtonTitle = "Leagues details"
+       self.navigationItem.title = presenter.teamName
+       let attributes: [NSAttributedString.Key: Any] = [
+           .font: UIFont.systemFont(ofSize: 24, weight: .bold),
+           .foregroundColor: UIColor.red
+       ]
+       navigationController?.navigationBar.titleTextAttributes = attributes
+           
+        LoadingIndicatorUtil.shared.show(on: self.view)
+        presenter.getDataFromModel()
+   }
 
-    
-    
-    
-    
     func renderToView(res : [Team])
     {
         self.presenter.setLiset(teamList: res)
@@ -66,6 +63,7 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
                         self.headerView?.clubImg.kf.setImage(with: logoURL)
                     }
             self.myTable.reloadData()
+            LoadingIndicatorUtil.shared.hide()
         }
     }
 

@@ -14,6 +14,7 @@ class DateUtility {
     private init() {
         dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
     }
     
     func getDateRange(for sport: String, isUpcoming: Bool) -> (from: String, to: String) {

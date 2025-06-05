@@ -88,7 +88,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="home" width="512" height="512"/>
+        <image name="home" width="170.66667175292969" height="170.66667175292969"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

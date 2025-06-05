@@ -28,6 +28,8 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
         let nib = UINib(nibName: "LeagueViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         presenter = LeaguePresenter(sport:sport,vc : self)
+        
+        LoadingIndicatorUtil.shared.show(on: self.view)
         presenter.getDataFromModel()
     }
     
@@ -45,6 +47,7 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
         self.presenter.setLiset(list: res)
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            LoadingIndicatorUtil.shared.hide()
         }
     }
     // MARK: - Table view data source

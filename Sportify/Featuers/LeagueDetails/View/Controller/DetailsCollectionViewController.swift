@@ -57,6 +57,7 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
         }
         collectionView.setCollectionViewLayout(layout, animated: true)
         
+        LoadingIndicatorUtil.shared.show(on: self.view)
         presenter.getUpcomingEvents()
         presenter.getLatestEvents()
         presenter.getAllTeams()
@@ -115,14 +116,17 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
     
     func reloadUpcomingSection() {
         collectionView.reloadSections(IndexSet(integer: 0))
+        LoadingIndicatorUtil.shared.hide()
     }
     
     func reloadLatestSection() {
         collectionView.reloadSections(IndexSet(integer: 1))
+        LoadingIndicatorUtil.shared.hide()
     }
     
     func reloadTeamsSection() {
         collectionView.reloadSections(IndexSet(integer: 2))
+        LoadingIndicatorUtil.shared.hide()
     }
 
     func UpcomingSection() -> NSCollectionLayoutSection {
