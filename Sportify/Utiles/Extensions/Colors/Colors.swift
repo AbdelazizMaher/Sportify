@@ -38,9 +38,10 @@ func applyGradientBackground(to view: UIView, cornerRadius: CGFloat = 12) {
         ]
     } else {
         gradientLayer.colors = [
-            UIColor(hex: "#FFDEE9").cgColor,
-            UIColor(hex: "#B5FFFC").cgColor
+            UIColor(hex: "#F5F7FA").cgColor,
+            UIColor(hex: "#DADADA").cgColor  
         ]
+        
     }
 
     gradientLayer.startPoint = CGPoint(x: 0, y: 0)
