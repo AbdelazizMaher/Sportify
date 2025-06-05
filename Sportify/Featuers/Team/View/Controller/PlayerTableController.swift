@@ -18,8 +18,7 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
     var presenter : TeamPresenter!
 
     var headerView: TeamCell?
-
-       override func viewDidLoad() {
+           override func viewDidLoad() {
            super.viewDidLoad()
 
            self.myTable.delegate = self
@@ -28,6 +27,7 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
 
            let nibPlayer = UINib(nibName: "PlayerCell", bundle: nil)
            myTable.register(nibPlayer, forCellReuseIdentifier: "playercell")
+           let screenHeight = UIScreen.main.bounds.height
 
            if let loadedHeaderView = Bundle.main.loadNibNamed("TeamCell", owner: self, options: nil)?.first as? TeamCell {
                headerView = loadedHeaderView
@@ -39,6 +39,8 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
                    headerView!.leadingAnchor.constraint(equalTo: myHeader.leadingAnchor),
                    headerView!.trailingAnchor.constraint(equalTo: myHeader.trailingAnchor),
                    headerView!.bottomAnchor.constraint(equalTo: myHeader.bottomAnchor),
+                   myHeader.heightAnchor.constraint(equalToConstant: screenHeight / 3)
+
                ])
            }
            self.navigationItem.backButtonTitle = "Leagues details"
@@ -50,6 +52,12 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
            navigationController?.navigationBar.titleTextAttributes = attributes
            presenter.getDataFromModel()
        }
+    
+
+    
+    
+    
+    
     func renderToView(res : [Team])
     {
         self.presenter.setLiset(teamList: res)

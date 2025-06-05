@@ -14,7 +14,7 @@ protocol FavProtocol{
 
 class FavTableController: UITableViewController, FavProtocol {
     let presenter = FavPresenter()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let headerLabel = UILabel()
@@ -24,11 +24,12 @@ class FavTableController: UITableViewController, FavProtocol {
           headerLabel.textAlignment = .center
           headerLabel.backgroundColor = .systemBackground
           headerLabel.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60)
-          tableView.tableHeaderView = headerLabel
         let nibPlayer = UINib(nibName: "FavCell", bundle: nil)
         tableView.register(nibPlayer, forCellReuseIdentifier: "favcell")
         let nibEmpty = UINib(nibName: "EmptyCell", bundle: nil)
         tableView.register(nibEmpty, forCellReuseIdentifier: "emptycell")
+        tableView.tableHeaderView = headerLabel
+
         presenter.vc = self
         presenter.getAllFav()
 
@@ -69,6 +70,7 @@ class FavTableController: UITableViewController, FavProtocol {
             
             let obj = presenter.getFavByIndexPath(indexPath: indexPath.row)
             
+
             cell.leageuLabel.text = obj.leagueName
             if let url = URL(string: obj.leagueLogo) {
                 cell.leagueImg.kf.setImage(with: url, placeholder: UIImage(named: "hamada"))

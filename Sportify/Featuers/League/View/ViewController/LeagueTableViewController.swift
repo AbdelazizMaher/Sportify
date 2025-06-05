@@ -63,8 +63,6 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LeagueViewCell
 
-        cell.contentView.layer.borderWidth = 0.5
-        cell.contentView.layer.borderColor = UIColor.gray.cgColor
         let obj = presenter.getLeagueObject(indexPath: indexPath.row)
 
         let bigImg = obj.leagueLogo ?? ""
