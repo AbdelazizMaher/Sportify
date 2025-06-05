@@ -18,6 +18,7 @@ class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFloatingTabBar()
+        setupCustomTabBarItems()
     }
     
     private func setupFloatingTabBar() {
@@ -39,6 +40,30 @@ class CustomTabBarController: UITabBarController {
         
         view.addSubview(floatingTabBarView)
         view.bringSubviewToFront(tabBar)
+    }
+    
+    private func setupCustomTabBarItems() {
+        guard let items = tabBar.items else { return }
+        
+        for (index, item) in items.enumerated() {
+            switch index {
+            case 0:
+                if let homeIcon = UIImage(named: "home") {
+                    item.image = homeIcon.resized(to: CGSize(width: 65, height: 65))
+                    item.selectedImage = homeIcon.resized(to: CGSize(width: 65, height: 65))
+                }
+            case 1:
+                if let favoritesIcon = UIImage(named: "fav") {
+                    item.image = favoritesIcon.resized(to: CGSize(width: 50, height: 50))
+                    item.selectedImage = favoritesIcon.resized(to: CGSize(width: 50, height: 50))
+                }
+            default:
+                break
+            }
+            
+            item.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+            item.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 4)
+        }
     }
     
     override func viewDidLayoutSubviews() {

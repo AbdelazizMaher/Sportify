@@ -53,6 +53,8 @@
 		81DAA1242DF0970500453C36 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6BAC012DEF84DE004A52A4 /* Gif.swift */; };
 		81DAA1262DF09BB400453C36 /* OnBoardingSlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAA1252DF09BB400453C36 /* OnBoardingSlidesViewController.swift */; };
 		81DAA1282DF09C2000453C36 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAA1272DF09C2000453C36 /* OnBoardingViewController.swift */; };
+		81DAA12B2DF0F04500453C36 /* TeamMemberType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0A3DA2DF0863F00DD9F35 /* TeamMemberType.swift */; };
+		81DAA12E2DF101D900453C36 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAA12D2DF101D900453C36 /* UIImage+Resize.swift */; };
 		81DBDED72DE8948100F1B6F4 /* OnBoardingScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81DBDED62DE8948100F1B6F4 /* OnBoardingScreen.storyboard */; };
 		81DBDEDB2DE898A400F1B6F4 /* OnBoardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDEDA2DE898A400F1B6F4 /* OnBoardingSlides.swift */; };
 		81DBDEE52DE8B09800F1B6F4 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 81DBDEE42DE8B09800F1B6F4 /* splash.json */; };
@@ -155,6 +157,7 @@
 		81D6AB152DEACD410029DE4B /* APIMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMethods.swift; sourceTree = "<group>"; };
 		81DAA1252DF09BB400453C36 /* OnBoardingSlidesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingSlidesViewController.swift; sourceTree = "<group>"; };
 		81DAA1272DF09C2000453C36 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		81DAA12D2DF101D900453C36 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		81DBDED62DE8948100F1B6F4 /* OnBoardingScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoardingScreen.storyboard; sourceTree = "<group>"; };
 		81DBDEDA2DE898A400F1B6F4 /* OnBoardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingSlides.swift; path = Sportify/Featuers/Onboarding/Model/OnBoardingSlides.swift; sourceTree = SOURCE_ROOT; };
 		81DBDEE42DE8B09800F1B6F4 /* splash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = splash.json; path = Sportify/Resources/Animation/splash.json; sourceTree = "<group>"; };
@@ -321,6 +324,7 @@
 		81566FD02DEF21290008F652 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				81DAA12C2DF1019500453C36 /* Image */,
 				BE6BAC002DEF8499004A52A4 /* Gif */,
 				81566FD12DEF21420008F652 /* Alert */,
 			);
@@ -405,6 +409,14 @@
 				81D6AB152DEACD410029DE4B /* APIMethods.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		81DAA12C2DF1019500453C36 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				81DAA12D2DF101D900453C36 /* UIImage+Resize.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		81DBDED22DE88CFA00F1B6F4 /* View */ = {
@@ -973,6 +985,7 @@
 				BE65A07B2DEB9F1300CFC602 /* TeamPresenter.swift in Sources */,
 				81D6AB142DEACB440029DE4B /* SportsEnum.swift in Sources */,
 				BE7D1FA42DECD1A300D88A0F /* FavPresenter.swift in Sources */,
+				81DAA12E2DF101D900453C36 /* UIImage+Resize.swift in Sources */,
 				81306D322DE9DCFE00218697 /* Team.swift in Sources */,
 				81306D342DE9E72500218697 /* ApiResponse.swift in Sources */,
 				BE65A0652DEB67E900CFC602 /* TeamCell.swift in Sources */,
@@ -986,6 +999,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81DAA12B2DF0F04500453C36 /* TeamMemberType.swift in Sources */,
 				818EB9772DF0913C002A6EAA /* MockReachability.swift in Sources */,
 				81251CEB2DEDFA5D0079398D /* NetworkService.swift in Sources */,
 				BE65A06E2DEB83AD00CFC602 /* PlayerCell.swift in Sources */,

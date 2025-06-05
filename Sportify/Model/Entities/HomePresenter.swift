@@ -16,10 +16,10 @@ protocol HomePresenterProtocol {
 
 class HomePresenter : HomePresenterProtocol {
     private(set) var sports: [SportItem] = [
-        SportItem(name: NSLocalizedString("football_home", comment: "hamda"), imageName: "foot1", type: SportsType.football),
-        SportItem(name: NSLocalizedString("basket_home", comment: "hamda"), imageName: "basket1", type: SportsType.basketball),
-        SportItem(name: NSLocalizedString("tennis_home", comment: "hamda"), imageName: "tennis1", type: SportsType.tennis),
-        SportItem(name: NSLocalizedString("cricket_home", comment: "hamda"), imageName: "cricket2", type: SportsType.cricket)
+        SportItem(name: NSLocalizedString("football_home", comment: "hamda"), imageName: "foot", type: SportsType.football),
+        SportItem(name: NSLocalizedString("basket_home", comment: "hamda"), imageName: "basket", type: SportsType.basketball),
+        SportItem(name: NSLocalizedString("tennis_home", comment: "hamda"), imageName: "tennis", type: SportsType.tennis),
+        SportItem(name: NSLocalizedString("cricket_home", comment: "hamda"), imageName: "cricket", type: SportsType.cricket)
     ]
     
     func numberOfItems() -> Int {

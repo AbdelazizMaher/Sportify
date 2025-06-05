@@ -64,12 +64,12 @@
             </objects>
             <point key="canvasLocation" x="759.5419847328244" y="-206.33802816901411"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="8pD-Tj-sTv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vM9-Gl-B6N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="5zl-wk-Ja0">
-                        <imageReference key="image" image="house" catalog="system" symbolScale="large"/>
+                    <tabBarItem key="tabBarItem" title="" id="5zl-wk-Ja0">
+                        <imageReference key="image" image="home" symbolScale="large"/>
                         <imageReference key="selectedImage" image="house" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -88,6 +88,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="home" width="512" height="512"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

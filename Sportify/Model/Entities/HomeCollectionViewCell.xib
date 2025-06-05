@@ -24,8 +24,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="248"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvm-Pc-Q6e">
-                                <rect key="frame" x="0.0" y="219.33333333333334" width="258" height="28.666666666666657"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <rect key="frame" x="0.0" y="218.66666666666666" width="258" height="29.333333333333343"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -53,6 +53,7 @@
             </constraints>
             <size key="customSize" width="258" height="248"/>
             <connections>
+                <outlet property="contentContainerView" destination="7r4-Zt-wnp" id="uYK-DA-v7g"/>
                 <outlet property="imageView" destination="dMu-3y-PaG" id="HWY-B5-rGT"/>
                 <outlet property="sportTypeTxt" destination="dvm-Pc-Q6e" id="VkW-tW-c3z"/>
             </connections>

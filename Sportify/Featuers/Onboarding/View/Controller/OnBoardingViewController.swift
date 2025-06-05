@@ -38,7 +38,7 @@ class OnBoardingViewController: UIViewController, UIPageViewControllerDataSource
                 labelPosition: .top
             ),
             OnBoardingSlidesViewController(
-                imageName: "tennisSlide",
+                imageName: "cricketSlide",
                 labelText: NSLocalizedString("slide3_txt", comment: "Third slide text"),
                 labelPosition: .bottom
             ),
@@ -66,7 +66,7 @@ class OnBoardingViewController: UIViewController, UIPageViewControllerDataSource
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(pageControl)
         
-        skipButton.setTitle("Skip", for: .normal)
+        skipButton.setTitle(NSLocalizedString("Skip", comment: "Skip button title"), for: .normal)
         skipButton.setTitleColor(.white, for: .normal)
         skipButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         skipButton.addTarget(self, action: #selector(skipTapped), for: .touchUpInside)
@@ -114,7 +114,7 @@ class OnBoardingViewController: UIViewController, UIPageViewControllerDataSource
             currentIndex = index
             pageControl.currentPage = currentIndex
             
-            skipButton.setTitle(currentIndex == pages.count - 1 ? "Done" : "Skip", for: .normal)
+            skipButton.setTitle(currentIndex == pages.count - 1 ? NSLocalizedString("Done", comment: "Done button title") : NSLocalizedString("Skip", comment: "Skip button title"), for: .normal)
         }
     }
 

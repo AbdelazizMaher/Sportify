@@ -15,24 +15,24 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-  
-    
+        
         presenter = HomePresenter()
             
-            navigationItem.title = NSLocalizedString("home_title", comment: "hamda")
-            navigationController?.navigationBar.titleTextAttributes = [
-                .font: UIFont.boldSystemFont(ofSize: 28),
-                .foregroundColor: UIColor.red
-            ]
-            
-            collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCell")
-            
-            let storyboardB = UIStoryboard(name: "Favorite", bundle: nil)
-            let favPage = storyboardB.instantiateViewController(withIdentifier: "fav")
-            favPage.tabBarItem = UITabBarItem(title: NSLocalizedString("fav_title", comment: "hamda"), image: UIImage(systemName: "heart"), tag: 2)
-            addFavoriteTab(favPage)
-        }
+        navigationItem.title = NSLocalizedString("home_title", comment: "hamda")
+        navigationController?.navigationBar.titleTextAttributes = [
+            .font: UIFont.boldSystemFont(ofSize: 28),
+            .foregroundColor: UIColor.red
+        ]
+        
+        collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCell")
+        
+        let storyboardB = UIStoryboard(name: "Favorite", bundle: nil)
+        let favPage = storyboardB.instantiateViewController(withIdentifier: "fav")
+    
+        favPage.tabBarItem = UITabBarItem(title: NSLocalizedString("fav_title", comment: "hamda"), image: UIImage(systemName: "heart"), tag: 2)
+    
+        addFavoriteTab(favPage)
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -47,7 +47,15 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
             var currentVCs = tabBarController.viewControllers ?? []
             
             let navController = UINavigationController(rootViewController: favPage)
-            navController.tabBarItem = UITabBarItem(title: NSLocalizedString("fav_title", comment: "hamda"), image: UIImage(systemName: "heart"), tag: 2)
+            let favItem = UITabBarItem(
+                title: "",
+                image: UIImage(named: "fav")?.resized(to: CGSize(width: 50, height: 50)),
+                tag: 2
+            )
+            favItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 300)
+            favItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+            
+            navController.tabBarItem = favItem
             
             if !currentVCs.contains(where: { $0.tabBarItem.tag == 2 }) {
                 currentVCs.append(navController)
@@ -56,15 +64,6 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
