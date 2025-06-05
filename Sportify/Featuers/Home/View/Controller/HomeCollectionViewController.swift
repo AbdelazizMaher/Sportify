@@ -96,7 +96,7 @@ class HomeCollectionViewController: UICollectionViewController, UICollectionView
             leaguesVC.sport = presenter.item(index: indexPath.item).type.rawValue
             navigationController?.pushViewController(leaguesVC, animated: true)
         }else {
-            showAlert(title: "No Internet Connection", message: "Please check your connection and try again.", okTitle: "Ok")
+            showAlert(title: INTERNET_ALERT_TITLE, message: INTERNET_ALERT_MSG, okTitle: DELETE_ALERT_OK)
         }
         
     }

@@ -63,8 +63,6 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LeagueViewCell
 
-        cell.contentView.layer.borderWidth = 0.5
-        cell.contentView.layer.borderColor = UIColor.gray.cgColor
         let obj = presenter.getLeagueObject(indexPath: indexPath.row)
 
         let bigImg = obj.leagueLogo ?? ""
@@ -94,8 +92,10 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
         
         if let imageView = cell.contentView.viewWithTag(1) as? UIImageView {
             if let url = URL(string: bigImg) {
-                 imageView.kf.setImage(with: url,placeholder: UIImage(named: "trophy"))
-             }
+                 imageView.kf.setImage(with: url,placeholder: UIImage(named: "hamada"))
+            }else{
+                imageView.image = UIImage(named: "hamada")
+            }
             imageView.layer.cornerRadius = imageView.frame.size.width / 2
               imageView.clipsToBounds = true
         }
@@ -140,7 +140,8 @@ class LeagueTableViewController: UITableViewController, LeagueProtocol {
             
             navigationController?.pushViewController(detailsVC, animated: true)
         } else {
-            showAlert(title: "No Internet Connection", message: "Please check your connection and try again.", okTitle: "Ok")
+            showAlert(title: INTERNET_ALERT_TITLE, message: INTERNET_ALERT_MSG, okTitle: DELETE_ALERT_OK)
+
         }
         
     }

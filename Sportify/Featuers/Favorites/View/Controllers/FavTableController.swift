@@ -14,7 +14,7 @@ protocol FavProtocol{
 
 class FavTableController: UITableViewController, FavProtocol {
     let presenter = FavPresenter()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let headerLabel = UILabel()
@@ -24,9 +24,12 @@ class FavTableController: UITableViewController, FavProtocol {
           headerLabel.textAlignment = .center
           headerLabel.backgroundColor = .systemBackground
           headerLabel.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60)
-          tableView.tableHeaderView = headerLabel
         let nibPlayer = UINib(nibName: "FavCell", bundle: nil)
         tableView.register(nibPlayer, forCellReuseIdentifier: "favcell")
+        let nibEmpty = UINib(nibName: "EmptyCell", bundle: nil)
+        tableView.register(nibEmpty, forCellReuseIdentifier: "emptycell")
+        tableView.tableHeaderView = headerLabel
+
         presenter.vc = self
         presenter.getAllFav()
 
@@ -52,42 +55,57 @@ class FavTableController: UITableViewController, FavProtocol {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return presenter.getFavCount()
+        
+        if presenter.getFavCount() > 0 {
+            return presenter.getFavCount()
+        }else{
+            return 1
+        }
     }
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "favcell", for: indexPath) as! FavCell
+        if presenter.getFavCount() > 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "favcell", for: indexPath) as! FavCell
+            
+            let obj = presenter.getFavByIndexPath(indexPath: indexPath.row)
+            
 
-        let obj = presenter.getFavByIndexPath(indexPath: indexPath.row)
-
-        cell.leageuLabel.text = obj.leagueName
-        if let url = URL(string: obj.leagueLogo) {
-            cell.leagueImg.kf.setImage(with: url, placeholder: UIImage(named: "trophy"))
-        }else{
-            cell.leagueImg.image = UIImage(named: "trophy")
-        }
-        cell.deleteAction = {
-            self.showAlert(title: DELETE_ALERT_TITLE, message:  DELETE_ALERT_MSG ,cancelTitle: DELETE_ALERT_CANCEL,deleteTitle: DELETE_ALERT_OK,onDelete: {
+            cell.leageuLabel.text = obj.leagueName
+            if let url = URL(string: obj.leagueLogo) {
+                cell.leagueImg.kf.setImage(with: url, placeholder: UIImage(named: "hamada"))
+            }else{
+                cell.leagueImg.image = UIImage(named: "hamada")
+            }
+            cell.deleteAction = {
+                self.showAlert(title: DELETE_ALERT_TITLE, message:  DELETE_ALERT_MSG ,cancelTitle: DELETE_ALERT_CANCEL,deleteTitle: DELETE_ALERT_OK,onDelete: {
+                    
+                    self.presenter.deleteFromCore(objc: obj)
+                    self.presenter.getAllFav()
+                    self.tableView.reloadData()
+                })
                 
-                self.presenter.deleteFromCore(objc: obj)
-                self.presenter.getAllFav()
-                self.tableView.reloadData()
-            })
-           
+            }
+            
+            let heartImage = presenter.checkFav(id: obj.leagueKey) ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+            cell.favBtn.setImage(heartImage, for: .normal)
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "emptycell", for: indexPath) as! EmptyCell
+            return cell
         }
-        
-        let heartImage = presenter.checkFav(id: obj.leagueKey) ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
-        cell.favBtn.setImage(heartImage, for: .normal)
-
-        return cell
     }
 
    
  
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        120
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        if presenter.getFavCount() > 0{
+            return 120
+        }else{
+            return tableView.frame.size.height / 2
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -113,7 +131,7 @@ class FavTableController: UITableViewController, FavProtocol {
 
             navigationController?.pushViewController(detailsVC, animated: true)
         } else {
-            showAlert(title: "No Internet Connection", message: "Please check your connection and try again.", okTitle: "Ok")
+            showAlert(title: INTERNET_ALERT_TITLE, message: INTERNET_ALERT_MSG, okTitle: DELETE_ALERT_OK)
         }
         
     }
