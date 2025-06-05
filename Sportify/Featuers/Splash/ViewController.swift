@@ -22,13 +22,13 @@ class ViewController: UIViewController {
         animation.animationSpeed = 0.5
         animation.play()
         if isFirst {
-              DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+              DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                   let onboardingVC = OnBoardingViewController()
                   self.navigationController?.setViewControllers([onboardingVC], animated: true)
 
               }
           } else {
-              DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+              DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                   self.navigateToHome()
                   //let onboardingVC = OnBoardingViewController()
                   //self.navigationController?.setViewControllers([onboardingVC], animated: true)

@@ -33,15 +33,12 @@ enum GradientStyle {
         case .defaultCell:
             return isDark ?
                 [UIColor(hex: "#2C3E50").cgColor, UIColor(hex: "#4CA1AF").cgColor] :
-                gradientLayer.colors = [
-            UIColor(hex: "#F5F7FA").cgColor,
-            UIColor(hex: "#DADADA").cgColor
-        ]
+                [UIColor(hex: "#F5F7FA").cgColor, UIColor(hex: "#DADADA").cgColor]
             
         case .SeconderyCell:
             return isDark ?
                 [UIColor(hex: "#232526").cgColor, UIColor(hex: "#414345").cgColor] :
-                [UIColor(hex: "#ECE9E6").cgColor, UIColor(hex: "#FFFFFF").cgColor]  
+                [UIColor(hex: "#EFFFE6").cgColor, UIColor(hex: "#FFECFF").cgColor]  
         }
     }
 }

@@ -31,7 +31,7 @@ class PlayerCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 16, bottom: 4, right: 16))
-        applyGradientBackground(to: backCell, cornerRadius: 12)
+        applyGradientBackground(to: backCell, cornerRadius: 12, style: .defaultCell)
     }
     
     
