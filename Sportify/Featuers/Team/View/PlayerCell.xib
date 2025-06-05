@@ -19,17 +19,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kc-KL-seX">
-                        <rect key="frame" x="0.0" y="0.0" width="527" height="144"/>
+                        <rect key="frame" x="0.0" y="55" width="527" height="89"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coach" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mF-80-zdQ">
-                                <rect key="frame" x="16" y="16" width="495" height="34"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <rect key="frame" x="16" y="-29" width="495" height="14.666666666666666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9ps-Pg-U0z">
-                                <rect key="frame" x="16" y="59.333333333333336" width="100" height="67.333333333333343"/>
+                                <rect key="frame" x="16" y="11.000000000000007" width="100" height="67.333333333333343"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="7i3-xq-wFp"/>
@@ -37,13 +36,16 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKP-vT-uxd">
-                                <rect key="frame" x="148" y="74" width="363" height="24"/>
+                                <rect key="frame" x="148" y="9.6666666666666714" width="363" height="33.333333333333336"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaA-5L-ajr">
-                                <rect key="frame" x="148" y="106" width="19" height="21.666666666666671"/>
+                                <rect key="frame" x="148" y="51" width="19" height="21.666666666666671"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21.666666666666671" id="N6p-dX-6T1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,29 +53,31 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9ps-Pg-U0z" firstAttribute="top" secondItem="8mF-80-zdQ" secondAttribute="bottom" constant="24" id="1MH-Dv-3vO"/>
+                            <constraint firstAttribute="bottom" secondItem="CaA-5L-ajr" secondAttribute="bottom" constant="16.333333333333329" id="7u4-TY-plI"/>
+                            <constraint firstItem="8mF-80-zdQ" firstAttribute="top" secondItem="7Kc-KL-seX" secondAttribute="top" constant="-29" id="8aN-jR-yKI"/>
                             <constraint firstAttribute="trailing" secondItem="8mF-80-zdQ" secondAttribute="trailing" constant="16" id="9N6-yI-9Rb"/>
                             <constraint firstItem="8mF-80-zdQ" firstAttribute="leading" secondItem="7Kc-KL-seX" secondAttribute="leading" constant="16" id="I9L-wH-1Py"/>
-                            <constraint firstItem="9ps-Pg-U0z" firstAttribute="top" secondItem="8mF-80-zdQ" secondAttribute="bottom" constant="8" id="LJQ-MF-dAE"/>
                             <constraint firstItem="9ps-Pg-U0z" firstAttribute="leading" secondItem="7Kc-KL-seX" secondAttribute="leading" constant="16" id="OIa-41-gWR"/>
                             <constraint firstItem="CaA-5L-ajr" firstAttribute="top" secondItem="HKP-vT-uxd" secondAttribute="bottom" constant="8" id="Qok-uq-A92"/>
+                            <constraint firstItem="9ps-Pg-U0z" firstAttribute="centerY" secondItem="7Kc-KL-seX" secondAttribute="centerY" id="c1U-me-lAu"/>
                             <constraint firstItem="HKP-vT-uxd" firstAttribute="leading" secondItem="9ps-Pg-U0z" secondAttribute="trailing" constant="32" id="gae-U9-7Th"/>
                             <constraint firstItem="CaA-5L-ajr" firstAttribute="leading" secondItem="9ps-Pg-U0z" secondAttribute="trailing" constant="32" id="gfW-ou-6I8"/>
-                            <constraint firstItem="8mF-80-zdQ" firstAttribute="top" secondItem="7Kc-KL-seX" secondAttribute="top" constant="16" id="lRC-Dg-hxF"/>
                             <constraint firstItem="HKP-vT-uxd" firstAttribute="top" secondItem="8mF-80-zdQ" secondAttribute="bottom" constant="24" id="qGe-5C-nlX"/>
-                            <constraint firstAttribute="bottom" secondItem="9ps-Pg-U0z" secondAttribute="bottom" constant="16" id="wfC-kp-txd"/>
                             <constraint firstAttribute="trailing" secondItem="HKP-vT-uxd" secondAttribute="trailing" constant="16" id="xXg-WR-R7Q"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="7Kc-KL-seX" secondAttribute="trailing" id="3jy-zj-z4C"/>
-                    <constraint firstItem="7Kc-KL-seX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="L4A-VA-LUM"/>
+                    <constraint firstItem="7Kc-KL-seX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="55" id="L4A-VA-LUM"/>
                     <constraint firstAttribute="bottom" secondItem="7Kc-KL-seX" secondAttribute="bottom" id="XPb-3a-ffo"/>
                     <constraint firstItem="7Kc-KL-seX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wC2-20-NjA"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="backCell" destination="7Kc-KL-seX" id="gaK-z7-lTO"/>
                 <outlet property="playerImg" destination="9ps-Pg-U0z" id="w36-yl-ZMc"/>
                 <outlet property="playerName" destination="HKP-vT-uxd" id="xny-6c-t2L"/>
                 <outlet property="playerNum" destination="CaA-5L-ajr" id="AoY-a5-3M7"/>
@@ -86,9 +90,6 @@
         <image name="person" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -322,9 +322,9 @@ class DetailsCollectionViewController: UICollectionViewController, LeagueDetails
         label.textColor = .label
 
         switch indexPath.section {
-        case 0: label.text = NSLocalizedString("upcoming_title", comment: "hamda")
-        case 1: label.text = NSLocalizedString("latest_title", comment: "hamda")
-        case 2: label.text = NSLocalizedString("team_title", comment: "hamda")
+        case 0: label.text = "     \(NSLocalizedString("upcoming_title", comment: "hamda"))"
+        case 1: label.text = "     \(NSLocalizedString("latest_title", comment: "hamda"))"
+        case 2: label.text = "     \(NSLocalizedString("team_title", comment: "hamda"))"
         default: label.text = ""
         }
 
