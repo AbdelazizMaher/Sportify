@@ -15,13 +15,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let isFirst = getIsFirstTime()
-
-//        setIsFirstTime(isFirst: true)
-       
        
         animation.animationSpeed = 0.5
         animation.play()
-        if isFirst {
+        if !isFirst {
               DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                   let onboardingVC = OnBoardingViewController()
                   self.navigationController?.setViewControllers([onboardingVC], animated: true)
@@ -30,13 +27,8 @@ class ViewController: UIViewController {
           } else {
               DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                   self.navigateToHome()
-                  //let onboardingVC = OnBoardingViewController()
-                  //self.navigationController?.setViewControllers([onboardingVC], animated: true)
-
               }
           }
-        
-        // Do any additional setup after loading the view.
     }
     
     private func navigateToHome() {

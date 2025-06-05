@@ -56,8 +56,6 @@
 		81DAA12B2DF0F04500453C36 /* TeamMemberType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0A3DA2DF0863F00DD9F35 /* TeamMemberType.swift */; };
 		81DAA12E2DF101D900453C36 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAA12D2DF101D900453C36 /* UIImage+Resize.swift */; };
 		81DBDED72DE8948100F1B6F4 /* OnBoardingScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81DBDED62DE8948100F1B6F4 /* OnBoardingScreen.storyboard */; };
-		81DBDEDB2DE898A400F1B6F4 /* OnBoardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBDEDA2DE898A400F1B6F4 /* OnBoardingSlides.swift */; };
-		81DBDEE52DE8B09800F1B6F4 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 81DBDEE42DE8B09800F1B6F4 /* splash.json */; };
 		81E40DEA2DF1CDBE00F1C2D1 /* LoadingIndicatorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E40DE92DF1CDBE00F1C2D1 /* LoadingIndicatorUtil.swift */; };
 		81E4EC6B2DE9BD8B00AB7D9A /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E4EC6A2DE9BD8B00AB7D9A /* League.swift */; };
 		81E99E962DECBA4100C9D9E0 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E99E952DECBA4100C9D9E0 /* DateUtility.swift */; };
@@ -168,10 +166,7 @@
 		81DAA1272DF09C2000453C36 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		81DAA12D2DF101D900453C36 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		81DBDED62DE8948100F1B6F4 /* OnBoardingScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoardingScreen.storyboard; sourceTree = "<group>"; };
-		81DBDEDA2DE898A400F1B6F4 /* OnBoardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingSlides.swift; path = Sportify/Featuers/Onboarding/Model/OnBoardingSlides.swift; sourceTree = SOURCE_ROOT; };
-		81DBDEE42DE8B09800F1B6F4 /* splash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		81E40DE92DF1CDBE00F1C2D1 /* LoadingIndicatorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorUtil.swift; sourceTree = "<group>"; };
-
 		81E4EC6A2DE9BD8B00AB7D9A /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = League.swift; path = Sportify/Model/Entities/League.swift; sourceTree = SOURCE_ROOT; };
 		81E99E952DECBA4100C9D9E0 /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 		A63F340BAE6FB242A78AD3AE /* Pods-SportifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportifyTests.release.xcconfig"; path = "Target Support Files/Pods-SportifyTests/Pods-SportifyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -410,14 +405,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		81D6AB112DEACB060029DE4B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				81DBDEDA2DE898A400F1B6F4 /* OnBoardingSlides.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		81D6AB122DEACB1F0029DE4B /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,7 +607,6 @@
 		BE701DBC2DE87E9D00FF3976 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				81D6AB112DEACB060029DE4B /* Model */,
 				81DBDED22DE88CFA00F1B6F4 /* View */,
 			);
 			path = Onboarding;
@@ -1025,7 +1011,6 @@
 				81306D342DE9E72500218697 /* ApiResponse.swift in Sources */,
 				BE65A0652DEB67E900CFC602 /* TeamCell.swift in Sources */,
 				81306D442DEA6A4400218697 /* HomePresenter.swift in Sources */,
-				81DBDEDB2DE898A400F1B6F4 /* OnBoardingSlides.swift in Sources */,
 				BE12ABAE2DECA67500451E6F /* FavCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

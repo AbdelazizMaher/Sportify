@@ -19,7 +19,7 @@ class OnBoardingViewController: UIViewController, UIPageViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        
+        setIsFirstTime(isFirst: true)
         setupPages()
         setupPageViewController()
         setupControls()

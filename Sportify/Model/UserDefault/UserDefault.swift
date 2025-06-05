@@ -12,5 +12,5 @@ func setIsFirstTime (isFirst : Bool){
 }
 
 func getIsFirstTime () -> Bool{
-    return UserDefaults.standard.bool(forKey: "IsFirst")
+    return UserDefaults.standard.bool(forKey: "isFirst")
 }
