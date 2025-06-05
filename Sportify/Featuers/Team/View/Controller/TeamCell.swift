@@ -21,7 +21,7 @@ class TeamCell: UITableViewCell {
          backImg.clipsToBounds = true
 
         
-        backImg.loadGif(named: "ahly")
+        backImg.loadGif(named: "stad")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -22,7 +22,7 @@
                                 <rect key="frame" x="4" y="111" width="385" height="707"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="splash"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="spl"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>

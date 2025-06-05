@@ -22,7 +22,6 @@ class FavCell: UITableViewCell {
         favBtn.imageView?.contentMode = .scaleAspectFit
         favBtn.imageEdgeInsets = .zero
         favBtn.contentEdgeInsets = .zero
-        // Set initial heart icon style
         favBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         
         leagueImg.clipsToBounds = true

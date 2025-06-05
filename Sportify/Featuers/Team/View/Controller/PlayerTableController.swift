@@ -85,7 +85,7 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
                
                cell.playerNum.text = coach.coachAge
                cell.playerName.text = coach.coachName
-               cell.playerType.text = "    \(NSLocalizedString("coach", comment: "hamda"))"
+               cell.playerType.text = "\(NSLocalizedString("coach", comment: "hamda"))"
             cell.playerImg.image = UIImage(named: "player")
 
            } else {
@@ -97,7 +97,7 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
                }
                cell.playerNum.text = player.playerNumber
                cell.playerName.text = player.playerName
-               cell.playerType.text = "    \(getTeamMemberType(member:player.playerType)) "
+               cell.playerType.text = "\(getTeamMemberType(member:player.playerType)) "
            }
 
         return cell
@@ -105,7 +105,7 @@ class PlayerTableController: UIViewController ,UITableViewDelegate,UITableViewDa
 
 
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 144
+        return 156
     }
 
    
