@@ -87,6 +87,9 @@
 		BE65A07C2DEB9F1300CFC602 /* TeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE65A07A2DEB9F1300CFC602 /* TeamPresenter.swift */; };
 		BE6BAC022DEF84DF004A52A4 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6BAC012DEF84DE004A52A4 /* Gif.swift */; };
 		BE701DD02DE8980A00FF3976 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE701DCF2DE8980A00FF3976 /* UserDefault.swift */; };
+		BE790FB72DF110E50087A86A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE790FB62DF110E50087A86A /* Colors.swift */; };
+		BE790FB82DF110E90087A86A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE790FB62DF110E50087A86A /* Colors.swift */; };
+		BE790FB92DF110EA0087A86A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE790FB62DF110E50087A86A /* Colors.swift */; };
 		BE7D1F9F2DECC78C00D88A0F /* LeageuLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D1F9E2DECC78C00D88A0F /* LeageuLocal.swift */; };
 		BE7D1FA12DECCAA600D88A0F /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D1FA02DECCAA600D88A0F /* LocalDataSource.swift */; };
 		BE7D1FA42DECD1A300D88A0F /* FavPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D1FA32DECD1A300D88A0F /* FavPresenter.swift */; };
@@ -185,6 +188,7 @@
 		BE65A07A2DEB9F1300CFC602 /* TeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPresenter.swift; sourceTree = "<group>"; };
 		BE6BAC012DEF84DE004A52A4 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		BE701DCF2DE8980A00FF3976 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		BE790FB62DF110E50087A86A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BE7D1F9E2DECC78C00D88A0F /* LeageuLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeageuLocal.swift; sourceTree = "<group>"; };
 		BE7D1FA02DECCAA600D88A0F /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		BE7D1FA32DECD1A300D88A0F /* FavPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPresenter.swift; sourceTree = "<group>"; };
@@ -324,6 +328,7 @@
 		81566FD02DEF21290008F652 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BE790FB52DF110CD0087A86A /* Colors */,
 				BE6BAC002DEF8499004A52A4 /* Gif */,
 				81566FD12DEF21420008F652 /* Alert */,
 			);
@@ -489,7 +494,6 @@
 				BE12ABAB2DEC9B9800451E6F /* Controllers */,
 				BE12ABA72DEC9AE800451E6F /* Favorite.storyboard */,
 				BE12ABAD2DECA67500451E6F /* FavCell.xib */,
-				BEB2955A2DF0DBCE0026FC91 /* EmptyCell.swift */,
 				BEB2955B2DF0DBCE0026FC91 /* EmptyCell.xib */,
 			);
 			path = View;
@@ -499,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				BE12ABAC2DECA67500451E6F /* FavCell.swift */,
+				BEB2955A2DF0DBCE0026FC91 /* EmptyCell.swift */,
 				BE12ABA92DEC9B8A00451E6F /* FavTableController.swift */,
 			);
 			path = Controllers;
@@ -697,6 +702,14 @@
 				BEB295532DF0D6BD0026FC91 /* empty.json */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		BE790FB52DF110CD0087A86A /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				BE790FB62DF110E50087A86A /* Colors.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		BE7D1FA22DECD17D00D88A0F /* Presenter */ = {
@@ -946,6 +959,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE02A6172DEA21010077CC9E /* Constant.swift in Sources */,
+				BE790FB72DF110E50087A86A /* Colors.swift in Sources */,
 				81566FD32DEF220B0008F652 /* UIViewController+Alert.swift in Sources */,
 				BE7D1F9F2DECC78C00D88A0F /* LeageuLocal.swift in Sources */,
 				81306D492DEA6AE000218697 /* HomeCollectionViewCell.swift in Sources */,
@@ -1005,6 +1019,7 @@
 				818EB9752DF0913C002A6EAA /* FakeNetworkService.swift in Sources */,
 				81251CE82DEDFA350079398D /* League.swift in Sources */,
 				81251CE72DEDFA320079398D /* Team.swift in Sources */,
+				BE790FB82DF110E90087A86A /* Colors.swift in Sources */,
 				BE65A0662DEB67E900CFC602 /* TeamCell.swift in Sources */,
 				8108C2582DE8379F0031F309 /* SportifyTests.swift in Sources */,
 				BE65A0782DEB887D00CFC602 /* PlayerTableController.swift in Sources */,
@@ -1019,6 +1034,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8108C2642DE8379F0031F309 /* SportifyUITestsLaunchTests.swift in Sources */,
+				BE790FB92DF110EA0087A86A /* Colors.swift in Sources */,
 				8108C2622DE8379F0031F309 /* SportifyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
