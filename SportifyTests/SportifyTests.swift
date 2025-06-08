@@ -17,6 +17,7 @@ final class SportifyTests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        service = nil
     }
 		
     func testExample() throws {
@@ -89,9 +90,8 @@ final class SportifyTests: XCTestCase {
     //test tennis
     func testGetTennisData(){
             let exp = expectation(description: "waiting for Api")
-            service.fetchDataFromApi(sport: "tennis", met: "Leagues") { (result: [League]?) in
-
-                XCTAssert(result?.count == 8905)
+            service.fetchDataFromApi(sport: "tennis", met: "Leagues",from: "2021-05-25",to: "2025-06-1") { (result: [League]?) in
+                XCTAssert(result?.count == 8919)
                 exp.fulfill()
 
             }
@@ -104,9 +104,9 @@ final class SportifyTests: XCTestCase {
     //test Cricket
     func testGetCricket(){
             let exp = expectation(description: "waiting for Api")
-            service.fetchDataFromApi(sport: "cricket", met: "Leagues") { (result: [League]?) in
+            service.fetchDataFromApi(sport: "cricket", met: "Leagues",from: "2021-05-25",to: "2025-06-1") { (result: [League]?) in
 
-                XCTAssert(result?.count == 702)
+                XCTAssert(result?.count == 704)
                 exp.fulfill()
 
             }
