@@ -6,14 +6,17 @@
 //
 
 import XCTest
+@testable import Sportify
 
 final class MockReachability: XCTestCase {
 
-    var fakeObj1 = FakeNetworkService(shouldReturnError: true)
-    var fakeObj2 = FakeNetworkService(shouldReturnError: false)
+    var fakeObj1 : FakeNetworkService!
+    var fakeObj2 : FakeNetworkService!
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        fakeObj1 = FakeNetworkService(shouldReturnError: NetworkManager.isInternetAvailable())
+        fakeObj2 = FakeNetworkService(shouldReturnError: !NetworkManager.isInternetAvailable())
     }
 
     override func tearDownWithError() throws {
