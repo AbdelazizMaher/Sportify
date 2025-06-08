@@ -59,6 +59,7 @@
 		81E40DEA2DF1CDBE00F1C2D1 /* LoadingIndicatorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E40DE92DF1CDBE00F1C2D1 /* LoadingIndicatorUtil.swift */; };
 		81E4EC6B2DE9BD8B00AB7D9A /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E4EC6A2DE9BD8B00AB7D9A /* League.swift */; };
 		81E99E962DECBA4100C9D9E0 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E99E952DECBA4100C9D9E0 /* DateUtility.swift */; };
+		81FDD4132DF60485000A8441 /* LoadingIndicatorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E40DE92DF1CDBE00F1C2D1 /* LoadingIndicatorUtil.swift */; };
 		B19734F5C62ABE2DFC72E237 /* Pods_Sportify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65A321DF1DA89952DF919EF /* Pods_Sportify.framework */; };
 		BE02A6152DEA20D00077CC9E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02A6142DEA20D00077CC9E /* NetworkService.swift */; };
 		BE02A6172DEA21010077CC9E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02A6162DEA21010077CC9E /* Constant.swift */; };
@@ -1029,6 +1030,7 @@
 				818EB9752DF0913C002A6EAA /* FakeNetworkService.swift in Sources */,
 				81251CE82DEDFA350079398D /* League.swift in Sources */,
 				81251CE72DEDFA320079398D /* Team.swift in Sources */,
+				81FDD4132DF60485000A8441 /* LoadingIndicatorUtil.swift in Sources */,
 				BE790FB82DF110E90087A86A /* Colors.swift in Sources */,
 				BE65A0662DEB67E900CFC602 /* TeamCell.swift in Sources */,
 				8108C2582DE8379F0031F309 /* SportifyTests.swift in Sources */,
